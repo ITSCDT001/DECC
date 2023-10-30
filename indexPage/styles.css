@@ -2,11 +2,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    
-}
-
-p {
-    color: white;
+    width: 100vw;
+    height: 100vh;
 }
 
 h4 {
@@ -14,6 +11,10 @@ h4 {
     margin: 0px;
     color: white;
     font-size: 45px;
+}
+
+.hr {
+    border-color: white;
 }
 
 
@@ -33,7 +34,7 @@ h4 {
 .btn-group {
     /* background-color: rgba(0, 0, 0, 0.6); */
     left: 50vw;
-    top: 50vh;
+    top: 54vh;
     transform: translate(-50%, -60%);
     width: 66vw;
     border-radius: 20px;
@@ -42,11 +43,11 @@ h4 {
     height: 100vh; */
 }
 
-#scroll{
+.list-group{
     /* background-color: rgba(0, 0, 0, 0.6); */
     font-size: 60px;
     border-radius: 20px;
-    position:absolute;
+    position: absolute;
     left: 50vw;
     top: 50vh;
     transform: translate(-50%, -20%);
@@ -68,7 +69,7 @@ h4 {
 .navbar-brand {
     left: 0;
     padding: 0px 15px;
-    font-size: 45px;
+    font-size: 60px;
 }
 
 .navbar {
@@ -78,6 +79,35 @@ h4 {
 
 .breadcrumb {
     margin-bottom: 0px;
-    font-size: 45px;
+    font-size: 60px;
     color: white;
 }
+
+.display-1 {
+    font-size: 200px;
+    font-weight: 50;
+    position: absolute;
+    left: 50vw;
+    transform: translate(-50%, 35%);
+    color: white;
+    
+}
+
+.border {
+    position: relative;
+    top: 57vh;
+    width: 60%;
+    transform: translate(33.33%, 0%);
+
+}
+
+.display-6 {
+    font-size: 40px;
+    font-weight: 50;
+    position: fixed;
+    top: 90vh;
+    color: white;
+    width: 100vw;
+    text-align: center;
+}
+
