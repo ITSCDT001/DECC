@@ -1,15 +1,10 @@
 //READ ME
-//Change background and any other set up needed
-import { setup } from "../setup.js";
-
-//sets up background
-setup();
 
 // ------------- MOVE BUTTONS ------------- //
 
 //Button group within Index
 const btnGroup = document.querySelector(".btn-group");
-const endPos = 250;
+const endPos = window.screen.height/4.8;
 
 let position = parseInt(getComputedStyle(btnGroup).top); // Obtain distance from top of element
 const originalLength = position - endPos; // Get orignal length
@@ -44,7 +39,7 @@ const DEE_Dic = {
     "Modelling and Digital Twins",
     "Acceptance of Digital Evidence",
   ],
-  Links: ["", "", "", "", ""],
+  Links: ["../deePages/dee01.html", "../deePages/dee02.html", "../deePages/dee03.html", "../deePages/dee04.html", "../deePages/dee05.html"],
   btn: document.getElementById("DEE-button"),
 };
 
@@ -56,7 +51,7 @@ const EDE_Dic = {
     "Storytelling",
     "Failure as Information",
   ],
-  Links: ["", "", "", "", ""],
+  Links: ["../edePages/ede01.html", "../edePages/ede02.html", "../edePages/ede03.html", "../edePages/ede04.html", "../edePages/ede05.html"],
   btn: document.getElementById("EDE-button"),
 };
 
@@ -68,7 +63,7 @@ const DES_Dic = {
     "Predictive Maintenance",
     "Modelling and Digital Twins",
   ],
-  Links: ["", "", "", "", ""],
+  Links: ["../desPages/des01.html", "../desPages/des02.html", "../desPages/des03.html", "../desPages/des04.html", "../desPages/des05.html"],
   btn: document.getElementById("DES-button"),
 };
 
@@ -80,50 +75,129 @@ function createButtons() {
   //Creates a new button untill the end of the list (SCALABILTIY!)
   for (let i = 0; i < DEE_Dic.List.length; i++) {
     //HTML to create a new button
-    button = document.createElement("button");
+    button = document.createElement("a");
     button.setAttribute("type", "button");
-    button.setAttribute("class", "btn btn-list btn-dark opacity-75");
+    button.setAttribute("class", "btn btn-list btn-dark opacity-75 DEE");
     button.setAttribute("href", DEE_Dic.Links[i]);
     button.style.width = "100%";
     button.innerText = DEE_Dic.List[i];
     button.style.margin = "2px 0px";
     // button.style.border = "1px solid white";
-    document.getElementById("scroll").appendChild(button);
+    document.getElementById("DEE-List").appendChild(button);
+  }
+  for (let i = 0; i < DES_Dic.List.length; i++) {
+    //HTML to create a new button
+    button = document.createElement("a");
+    button.setAttribute("type", "button");
+    button.setAttribute("class", "btn btn-list btn-dark opacity-75 DES");
+    button.setAttribute("href", DES_Dic.Links[i]);
+    button.style.width = "100%";
+    button.innerText = DES_Dic.List[i];
+    button.style.margin = "2px 0px";
+    // button.style.border = "1px solid white";
+    document.getElementById("DES-List").appendChild(button);
+  }
+  for (let i = 0; i < EDE_Dic.List.length; i++) {
+    //HTML to create a new button
+    button = document.createElement("a");
+    button.setAttribute("type", "button");
+    button.setAttribute("class", "btn btn-list btn-dark opacity-75 EDE");
+    button.setAttribute("href", EDE_Dic.Links[i]);
+    button.style.width = "100%";
+    button.innerText = EDE_Dic.List[i];
+    button.style.margin = "2px 0px";
+    // button.style.border = "1px solid white";
+    document.getElementById("EDE-List").appendChild(button);
   }
 }
 //Appears the button list
-function appearButtons() {
-  document.getElementById("scroll").style.visibility = "visible";
-}
-//Hides the button list
-function hideButtons() {
-  document.getElementById("scroll").style.visibility = "hidden";
+
+// BUTTON VARIABLES
+
+var DEE_List = document.getElementById("DEE-List");
+var DES_List = document.getElementById("DES-List");
+var EDE_List = document.getElementById("EDE-List");
+var welcomeTitle = document.getElementById("welcome-title");
+var listHasRun = false;
+var titleHasRun = false;
+
+// //Hides the button list
+function hideAllButtons() {
+  DEE_List.style.visibility = "hidden";
+  DEE_List.style.opacity = 0;
+  DES_List.style.visibility = "hidden";
+  DES_List.style.opacity = 0;
+  EDE_List.style.visibility = "hidden";
+  EDE_List.style.opacity = 0;
+
 }
 
+function fadeIn(element) {
+  if (!listHasRun) {
+    listHasRun = true;
+    let opacity = 0;
+    element.style.display = "block";
+    let timer = setInterval(function () {
+      if (opacity >= 1) {
+        clearInterval(timer);
+      }
+      element.style.opacity = opacity;
+      element.style.filter = "alpha(opacity=" + opacity * 100 + ")";
+      opacity += 0.025;
+    }, 13);
+  }
+  else if (listHasRun) {
+    element.style.visibility = "visible";
+    element.style.opacity = 1;
+  }
+}
+
+function fadeOut(element) {
+  if (!titleHasRun) {
+    titleHasRun = true;
+    let opacity = 1;
+    element.style.display = "block";
+    let timer = setInterval(function () {
+      if (opacity <= 0) {
+        clearInterval(timer);
+      }
+      element.style.opacity = opacity;
+      element.style.filter = "alpha(opacity=" + opacity * 100 + ")";
+      opacity -= 0.15;
+    }, 25);
+  }
+}
+
+
 createButtons();
-hideButtons();
+hideAllButtons();
 
 //---------------- END APPEAR BUTTONS -----------------//
 
 //When clicking on the button the animation goes ahead
 btnGroup.addEventListener("click", () => {
   moveButton2();
-  appearButtons();
+  fadeOut(welcomeTitle);
 });
 
 DEE_Dic.btn.addEventListener("click", () => {
-  appearButton();
+  hideAllButtons();
+  document.getElementById("DEE-List").style.visibility = "visible";
+  fadeIn(DEE_List)
 });
 
 EDE_Dic.btn.addEventListener("click", () => {
-  appearButtons();
+  hideAllButtons();
+  document.getElementById("EDE-List").style.visibility = "visible";
+  fadeIn(EDE_List)
 });
 
 DES_Dic.btn.addEventListener("click", () => {
-  appearButtons();
+  hideAllButtons();
+  document.getElementById("DES-List").style.visibility = "visible";
+  fadeIn(DES_List)
+
 });
 
 
-// figure out how to make each set of buttons appear according to the button pressed so only buttons for the button pressed appear
-// make animation for button list appearing
 // 

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+h4 {
+    padding-left: 0.39vw;
+    margin: 0px;
+    color: white;
+    font-size: 3.125vh;
+}
+
+.hr {
+    border-color: white;
+}
+
+
+.btn {
+    font-size: 4.17vh;
+    width: 33vw;
+    border-radius: 0.78vw;
+}
+
+.btn .btn-list {
+    font-size: 4.17vh;
+    width: 100vh;
+    border-radius: 0.78vw;
+}
+
+
+.btn-group {
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -60%);
+    width: 66vw;
+    border-radius: 0.78vw;
+    /* border: 1px solid white; */
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+.list-group{
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    font-size: 4.17vh;
+    border-radius: 0.78vw;
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    transform: translate(-50%, -20%);
+    width: 66vw;
+    max-height: 60vh;
+    /* overflow-y: scroll; */
+    border-radius: 0.78vw;
+    border-color: rgba(33, 37, 41, 1);
+    /* width: 100vw;
+    height: 100vh; */
+    
+}
+
+.navbar .container-fluid {
+    padding-left: 0px;
+    justify-content: left;
+}
+
+.navbar-brand {
+    left: 0;
+    padding: 0vw 1vh;
+    font-size: 1.76vh;
+}
+
+.navbar {
+    background-color: rgba(33, 37, 41, 0.75);
+    /* border: 1px solid white; */
+}
+
+.breadcrumb {
+    margin-bottom: 0px;
+    font-size: 1.75vh;
+    color: white;
+}
+
+.display-1 {
+    font-size: 7.81vh;
+    font-weight: 50;
+    position: absolute;
+    left: 50vw;
+    transform: translate(-50%, 0%);
+    color: white;
+    
+}
