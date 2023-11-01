@@ -1,21 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
 
-/* ANIMATIONS */
-
-@keyframes list-group-move {
-    100% {top: 20.8vh;}
-}
-
-@keyframes fade-in {
-    100% {opacity: 1;}
-}
-
-@keyframes fade-out {
-    100% {opacity: 0;}
-}
-
-/* ELEMENT STYLES */
-
 body {
     font-family: 'Montserrat', sans-serif;
     width: 100vw;
@@ -23,10 +7,10 @@ body {
 }
 
 h4 {
-    padding-left: 0.39vw;
+    padding-left: 10px;
     margin: 0px;
     color: white;
-    font-size: 3.125vh;
+    font-size: 45px;
 }
 
 .hr {
@@ -35,15 +19,15 @@ h4 {
 
 
 .btn {
-    font-size: 4.17vh;
-    width: 33vw;
-    border-radius: 1.39vh;
+    font-size: 60px;
+    width: 33%;
+    border-radius: 20px;
 }
 
 .btn .btn-list {
-    font-size: 4.17vh;
-    width: 100vw;
-    border-radius:1.39vh;
+    font-size: 60px;
+    width: 100%;
+    border-radius: 20px;
 }
 
 
@@ -53,7 +37,7 @@ h4 {
     top: 54vh;
     transform: translate(-50%, -60%);
     width: 66vw;
-    border-radius: 1.39vh;
+    border-radius: 20px;
     /* border: 1px solid white; */
     /* width: 100vw;
     height: 100vh; */
@@ -61,8 +45,8 @@ h4 {
 
 .list-group{
     /* background-color: rgba(0, 0, 0, 0.6); */
-    font-size: 4.17vh;
-    border-radius: 1.39vh;
+    font-size: 60px;
+    border-radius: 20px;
     position: absolute;
     left: 50vw;
     top: 50vh;
@@ -70,7 +54,7 @@ h4 {
     width: 66vw;
     max-height: 60vh;
     /* overflow-y: scroll; */
-    border-radius: 1.39vh;
+    border-radius: 20px;
     border-color: rgba(33, 37, 41, 1);
     /* width: 100vw;
     height: 100vh; */
@@ -84,8 +68,8 @@ h4 {
 
 .navbar-brand {
     left: 0;
-    padding: 0vw 1vh;
-    font-size: 4.17vh;
+    padding: 0px 15px;
+    font-size: 60px;
 }
 
 .navbar {
@@ -95,12 +79,12 @@ h4 {
 
 .breadcrumb {
     margin-bottom: 0px;
-    font-size: 4.17vh;
+    font-size: 60px;
     color: white;
 }
 
 .display-1 {
-    font-size: 13.9vh;
+    font-size: 200px;
     font-weight: 50;
     position: absolute;
     left: 50vw;
@@ -110,15 +94,15 @@ h4 {
 }
 
 .border {
-    position: absolute;
-    top: 85vh;
-    width: 60vw;
+    position: relative;
+    top: 57vh;
+    width: 60%;
     transform: translate(33.33%, 0%);
 
 }
 
 .display-6 {
-    font-size: 2.8vh;
+    font-size: 40px;
     font-weight: 50;
     position: fixed;
     top: 90vh;
@@ -126,3 +110,4 @@ h4 {
     width: 100vw;
     text-align: center;
 }
+
