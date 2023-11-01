@@ -4,25 +4,10 @@
 
 //Button group within Index
 const btnGroup = document.querySelector(".btn-group");
-const endPos = window.screen.height/4.8;
 
-let position = parseInt(getComputedStyle(btnGroup).top); // Obtain distance from top of element
-const originalLength = position - endPos; // Get orignal length
-let length = position - endPos; // Get current length between end position and current position
-const originalSpeed = 10; // Decalre an initial speed to compare to when resetting speed
-let speed; // Decalre speed vairable
-
-//Function starts at a speed and de-accelerates exponentially until it stops near top of the page
-function moveButton2() {
-  if (length > 0) {
-    position = parseInt(getComputedStyle(btnGroup).top);
-    length = position - endPos;
-    speed = (length / originalLength) * originalSpeed * 4;
-    let newPos = (position -= speed);
-    btnGroup.style.top = `${newPos}px`;
-    //asynchronous function that carrys out moveButton 60 times a second (1000 / 60 ~ 60fps)
-    setTimeout(moveButton2, 16);
-  }
+// Function starts at a speed and de-accelerates exponentially until it stops near top of the page
+function moveButton() {
+  btnGroup.style.animation="list-group-move 0.75s forwards";
 }
 
 //----------------- END MOVE BUTTONS ----------------- //
@@ -121,51 +106,32 @@ var welcomeTitle = document.getElementById("welcome-title");
 var listHasRun = false;
 var titleHasRun = false;
 
+DEE_List.style.opacity = 0;
+DES_List.style.opacity = 0;
+EDE_List.style.opacity = 0;
+
 // //Hides the button list
 function hideAllButtons() {
   DEE_List.style.visibility = "hidden";
-  DEE_List.style.opacity = 0;
   DES_List.style.visibility = "hidden";
-  DES_List.style.opacity = 0;
   EDE_List.style.visibility = "hidden";
-  EDE_List.style.opacity = 0;
-
 }
 
 function fadeIn(element) {
-  if (!listHasRun) {
-    listHasRun = true;
-    let opacity = 0;
-    element.style.display = "block";
-    let timer = setInterval(function () {
-      if (opacity >= 1) {
-        clearInterval(timer);
-      }
-      element.style.opacity = opacity;
-      element.style.filter = "alpha(opacity=" + opacity * 100 + ")";
-      opacity += 0.025;
-    }, 13);
-  }
-  else if (listHasRun) {
-    element.style.visibility = "visible";
-    element.style.opacity = 1;
-  }
+  element.style.visibility = "visible";
+
+  element.style.animation="fade-in 1s forwards";
+
+  element.addEventListener('animationend', () => {
+    DEE_List.style.opacity = 1;
+    DES_List.style.opacity = 1;
+    EDE_List.style.opacity = 1;
+    console.log("end");
+  }) 
 }
 
 function fadeOut(element) {
-  if (!titleHasRun) {
-    titleHasRun = true;
-    let opacity = 1;
-    element.style.display = "block";
-    let timer = setInterval(function () {
-      if (opacity <= 0) {
-        clearInterval(timer);
-      }
-      element.style.opacity = opacity;
-      element.style.filter = "alpha(opacity=" + opacity * 100 + ")";
-      opacity -= 0.15;
-    }, 25);
-  }
+  element.style.animation="fade-out 0.5s forwards";
 }
 
 
@@ -176,27 +142,23 @@ hideAllButtons();
 
 //When clicking on the button the animation goes ahead
 btnGroup.addEventListener("click", () => {
-  moveButton2();
+  moveButton();
   fadeOut(welcomeTitle);
 });
 
 DEE_Dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  document.getElementById("DEE-List").style.visibility = "visible";
   fadeIn(DEE_List)
 });
 
 EDE_Dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  document.getElementById("EDE-List").style.visibility = "visible";
   fadeIn(EDE_List)
 });
 
 DES_Dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  document.getElementById("DES-List").style.visibility = "visible";
   fadeIn(DES_List)
-
 });
 
 
