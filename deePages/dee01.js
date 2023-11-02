@@ -1,4 +1,7 @@
 // ----------------- DEE01 ---------------------
 
-animateInTimeline('card-1', 'fade', 0);
-animateInTimeline('card-2', 'fade', 1);
+import { animateInTimeline } from "/utilities/timeline.js";
+
+animateInTimeline("card-1", "fadeIn", 0);
+animateInTimeline("card-2", "fadeIn", 1);
+animateInTimeline("card-2", "fadeOut", 2);

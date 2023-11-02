@@ -1,165 +1,339 @@
 //READ ME
 
-// ------------- MOVE BUTTONS ------------- //
+import { fadeIn, fadeOut } from "/utilities/animations.js";
 
-//Button group within Index
-const btnGroup = document.querySelector(".btn-group");
-
-// Function starts at a speed and de-accelerates exponentially until it stops near top of the page
-function moveButton() {
-  btnGroup.style.animation="list-group-move 0.75s forwards";
-}
-
-//----------------- END MOVE BUTTONS ----------------- //
+const welcomeText = document.getElementById("welcome-text");
 
 //---------------- APPEAR BUTTONS --------------------//
 
 //Dics of buttons for each button the user could press
 
-const DEE_Dic = {
+const concept_dic = {
   List: [
-    "Translate the need",
-    "The Digital Thread",
-    "Using the Contract",
-    "Modelling and Digital Twins",
-    "Acceptance of Digital Evidence",
+    "1",
+    "2",
+    "3",
   ],
-  Links: ["../deePages/dee01.html", "../deePages/dee02.html", "../deePages/dee03.html", "../deePages/dee04.html", "../deePages/dee05.html"],
-  btn: document.getElementById("DEE-button"),
+  Links: [
+    "",
+    "",
+    ""
+  ],
+  btn: document.getElementById("concept-button"),
 };
 
-const EDE_Dic = {
+const assessment_dic = {
   List: [
-    "Digital Engineering Team",
-    "Terminology Clarification",
-    "Thinking Differently",
-    "Storytelling",
-    "Failure as Information",
+    "4",
+    "5",
+    "6",
   ],
-  Links: ["../edePages/ede01.html", "../edePages/ede02.html", "../edePages/ede03.html", "../edePages/ede04.html", "../edePages/ede05.html"],
-  btn: document.getElementById("EDE-button"),
+  Links: [
+    "",
+    "",
+    ""
+  ],
+  btn: document.getElementById("assessment-button"),
 };
 
-const DES_Dic = {
+const demonstration_dic = {
   List: [
-    "Machine Learning	",
-    "Health & Usage Monitoring Systems",
-    "Using the Contract",
-    "Predictive Maintenance",
-    "Modelling and Digital Twins",
+    "7",
+    "8",
+    "9",
   ],
-  Links: ["../desPages/des01.html", "../desPages/des02.html", "../desPages/des03.html", "../desPages/des04.html", "../desPages/des05.html"],
-  btn: document.getElementById("DES-button"),
+  Links: [
+    "",
+    "",
+    ""
+  ],
+  btn: document.getElementById("demonstration-button"),
 };
 
-//Creates an element that is a button
+const manufacture_dic = {
+  List: [
+    "10",
+    "11",
+    "12",
+  ],
+  Links: [
+    "",
+    "",
+    ""
+  ],
+  btn: document.getElementById("manufacture-button"),
+};
+
+const in_use_dic = {
+  List: [
+    "13",
+    "14",
+    "15",
+  ],
+  Links: [
+    "",
+    "",
+    ""
+  ],
+  btn: document.getElementById("in-use-button"),
+};
+
+const disposal_dic = {
+  List: [
+    "16",
+    "17",
+    "18",
+  ],
+  Links: [
+    "",
+    "",
+    ""
+  ],
+  btn: document.getElementById("disposal-button"),
+};
+
+
+//                                                   //
+//             Creating All The Buttons              //
+//                                                   //
 
 let button;
 //Creates all buttons at the start
 function createButtons() {
   //Creates a new button untill the end of the list (SCALABILTIY!)
-  for (let i = 0; i < DEE_Dic.List.length; i++) {
+  for (let i = 0; i < concept_dic.List.length; i++) {
     //HTML to create a new button
     button = document.createElement("a");
     button.setAttribute("type", "button");
-    button.setAttribute("class", "btn btn-list btn-dark opacity-75 DEE");
-    button.setAttribute("href", DEE_Dic.Links[i]);
+    button.setAttribute("class", "btn btn-list btn-dark opacity-100 concept");
+    button.setAttribute("href", concept_dic.Links[i]);
     button.style.width = "100%";
-    button.innerText = DEE_Dic.List[i];
+    button.style.lineHeight = "8vh";
+    button.innerText = concept_dic.List[i];
     button.style.margin = "2px 0px";
     // button.style.border = "1px solid white";
-    document.getElementById("DEE-List").appendChild(button);
+    document.getElementById("concept-button-list").appendChild(button);
   }
-  for (let i = 0; i < DES_Dic.List.length; i++) {
+  for (let i = 0; i < assessment_dic.List.length; i++) {
     //HTML to create a new button
     button = document.createElement("a");
     button.setAttribute("type", "button");
-    button.setAttribute("class", "btn btn-list btn-dark opacity-75 DES");
-    button.setAttribute("href", DES_Dic.Links[i]);
+    button.setAttribute("class", "btn btn-list btn-dark opacity-100 assessment");
+    button.setAttribute("href", assessment_dic.Links[i]);
     button.style.width = "100%";
-    button.innerText = DES_Dic.List[i];
+    button.style.lineHeight = "8vh";
+    button.innerText = assessment_dic.List[i];
     button.style.margin = "2px 0px";
     // button.style.border = "1px solid white";
-    document.getElementById("DES-List").appendChild(button);
+    document.getElementById("assessment-button-list").appendChild(button);
   }
-  for (let i = 0; i < EDE_Dic.List.length; i++) {
+  for (let i = 0; i < demonstration_dic.List.length; i++) {
     //HTML to create a new button
     button = document.createElement("a");
     button.setAttribute("type", "button");
-    button.setAttribute("class", "btn btn-list btn-dark opacity-75 EDE");
-    button.setAttribute("href", EDE_Dic.Links[i]);
+    button.setAttribute("class", "btn btn-list btn-dark opacity-100 demonstration");
+    button.setAttribute("href", demonstration_dic.Links[i]);
     button.style.width = "100%";
-    button.innerText = EDE_Dic.List[i];
+    button.style.lineHeight = "8vh";
+    button.innerText = demonstration_dic.List[i];
     button.style.margin = "2px 0px";
     // button.style.border = "1px solid white";
-    document.getElementById("EDE-List").appendChild(button);
+    document.getElementById("demonstration-button-list").appendChild(button);
+  }
+  for (let i = 0; i < manufacture_dic.List.length; i++) {
+    //HTML to create a new button
+    button = document.createElement("a");
+    button.setAttribute("type", "button");
+    button.setAttribute("class", "btn btn-list btn-dark opacity-100 manufacture");
+    button.setAttribute("href", manufacture_dic.Links[i]);
+    button.style.width = "100%";
+    button.style.lineHeight = "8vh";
+    button.innerText = manufacture_dic.List[i];
+    button.style.margin = "2px 0px";
+    // button.style.border = "1px solid white";
+    document.getElementById("manufacture-button-list").appendChild(button);
+  }
+  for (let i = 0; i < in_use_dic.List.length; i++) {
+    //HTML to create a new button
+    button = document.createElement("a");
+    button.setAttribute("type", "button");
+    button.setAttribute("class", "btn btn-list btn-dark opacity-100 in-use");
+    button.setAttribute("href", in_use_dic.Links[i]);
+    button.style.width = "100%";
+    button.style.lineHeight = "8vh";
+    button.innerText = in_use_dic.List[i];
+    button.style.margin = "2px 0px";
+    // button.style.border = "1px solid white";
+    document.getElementById("in-use-button-list").appendChild(button);
+  }
+  for (let i = 0; i < disposal_dic.List.length; i++) {
+    //HTML to create a new button
+    button = document.createElement("a");
+    button.setAttribute("type", "button");
+    button.setAttribute("class", "btn btn-list btn-dark opacity-100 disposal");
+    button.setAttribute("href", disposal_dic.Links[i]);
+    button.style.width = "100%";
+    button.style.lineHeight = "8vh";
+    button.innerText = disposal_dic.List[i];
+    button.style.margin = "2px 0px";
+    // button.style.border = "1px solid white";
+    document.getElementById("disposal-button-list").appendChild(button);
   }
 }
-//Appears the button list
+
+// End
 
 // BUTTON VARIABLES
 
-var DEE_List = document.getElementById("DEE-List");
-var DES_List = document.getElementById("DES-List");
-var EDE_List = document.getElementById("EDE-List");
-var welcomeTitle = document.getElementById("welcome-title");
-var listHasRun = false;
-var titleHasRun = false;
+var concept_list = document.getElementById("concept-button-list");
+var assessment_list = document.getElementById("assessment-button-list");
+var demonstration_list = document.getElementById("demonstration-button-list");
+var manufacture_list = document.getElementById("manufacture-button-list");
+var in_use_list = document.getElementById("in-use-button-list");
+var disposal_list = document.getElementById("disposal-button-list");
 
-DEE_List.style.opacity = 0;
-DES_List.style.opacity = 0;
-EDE_List.style.opacity = 0;
+concept_list.style.opacity = 0;
+assessment_list.style.opacity = 0;
+demonstration_list.style.opacity = 0;
+manufacture_list.style.opacity = 0;
+in_use_list.style.opacity = 0;
+disposal_list.style.opacity = 0;
 
-// //Hides the button list
 function hideAllButtons() {
-  DEE_List.style.visibility = "hidden";
-  DES_List.style.visibility = "hidden";
-  EDE_List.style.visibility = "hidden";
+  concept_list.style.visibility = "hidden";
+  assessment_list.style.visibility = "hidden";
+  demonstration_list.style.visibility = "hidden";
+  manufacture_list.style.visibility = "hidden";
+  in_use_list.style.visibility = "hidden";
+  disposal_list.style.visibility = "hidden";
 }
-
-function fadeIn(element) {
-  element.style.visibility = "visible";
-
-  element.style.animation="fade-in 1s forwards";
-
-  element.addEventListener('animationend', () => {
-    DEE_List.style.opacity = 1;
-    DES_List.style.opacity = 1;
-    EDE_List.style.opacity = 1;
-    console.log("end");
-  }) 
-}
-
-function fadeOut(element) {
-  element.style.animation="fade-out 0.5s forwards";
-}
-
 
 createButtons();
 hideAllButtons();
 
 //---------------- END APPEAR BUTTONS -----------------//
 
-//When clicking on the button the animation goes ahead
-btnGroup.addEventListener("click", () => {
+concept_dic.btn.addEventListener("click", () => {
+  hideAllButtons();
+  fadeIn(concept_list);
+
+  concept_list.addEventListener('animationend', () => {
+    assessment_list.style.opacity = 1;
+    demonstration_list.style.opacity = 1;
+    manufacture_list.style.opacity = 1;
+    in_use_list.style.opacity = 1;
+    disposal_list.style.opacity = 1;
+  }) 
+  
+});
+
+assessment_dic.btn.addEventListener("click", () => {
+  hideAllButtons();
+  fadeIn(assessment_list);
+
+  assessment_list.addEventListener('animationend', () => {
+    concept_list.style.opacity = 1;
+    demonstration_list.style.opacity = 1;
+    manufacture_list.style.opacity = 1;
+    in_use_list.style.opacity = 1;
+    disposal_list.style.opacity = 1;
+  }) 
+  
+});
+
+demonstration_dic.btn.addEventListener("click", () => {
+  hideAllButtons();
+  fadeIn(demonstration_list);
+
+  demonstration_list.addEventListener('animationend', () => {
+    concept_list.style.opacity = 1;
+    assessment_list.style.opacity = 1;
+    manufacture_list.style.opacity = 1;
+    in_use_list.style.opacity = 1;
+    disposal_list.style.opacity = 1;
+  }) 
+
+});
+
+manufacture_dic.btn.addEventListener("click", () => {
+  hideAllButtons();
+  fadeIn(manufacture_list);
+
+  manufacture_list.addEventListener('animationend', () => {
+    concept_list.style.opacity = 1;
+    assessment_list.style.opacity = 1;
+    demonstration_list.style.opacity = 1;
+    in_use_list.style.opacity = 1;
+    disposal_list.style.opacity = 1;
+  }) 
+
+});
+
+in_use_dic.btn.addEventListener("click", () => {
+  hideAllButtons();
+  fadeIn(in_use_list);
+
+  in_use_list.addEventListener('animationend', () => {
+    concept_list.style.opacity = 1;
+    assessment_list.style.opacity = 1;
+    demonstration_list.style.opactiy = 1;
+    manufacture_list.style.opacity = 1;
+    disposal_list.style.opacity = 1;
+  }) 
+
+});
+
+disposal_dic.btn.addEventListener("click", () => {
+  hideAllButtons();
+  fadeIn(disposal_list);
+
+  disposal_list.addEventListener('animationend', () => {
+    concept_list.style.opacity = 1;
+    assessment_list.style.opacity = 1;
+    manufacture_list.style.opacity = 1;
+    in_use_list.style.opacity = 1;
+    demonstration_list.style.opacity = 1;
+  }) 
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// Define a function to handle the button click event
+function handleButtonClick(event) {
+  console.log('VMOEMOVEMOINGI');
   moveButton();
-  fadeOut(welcomeTitle);
-});
+  fadeOut(welcomeText);
+  // Remove the event listeners from all buttons
+  concept_dic.btn.removeEventListener('click', handleButtonClick);
+  assessment_dic.btn.removeEventListener('click', handleButtonClick);
+  demonstration_dic.btn.removeEventListener('click', handleButtonClick);
+  manufacture_dic.btn.removeEventListener('click', handleButtonClick);
+  in_use_dic.btn.removeEventListener('click', handleButtonClick);
+  disposal_dic.btn.removeEventListener('click', handleButtonClick);
 
-DEE_Dic.btn.addEventListener("click", () => {
-  hideAllButtons();
-  fadeIn(DEE_List)
-});
+}
 
-EDE_Dic.btn.addEventListener("click", () => {
-  hideAllButtons();
-  fadeIn(EDE_List)
-});
+// Add event listeners to the buttons
+concept_dic.btn.addEventListener('click', handleButtonClick);
+assessment_dic.btn.addEventListener('click', handleButtonClick);
+demonstration_dic.btn.addEventListener('click', handleButtonClick);
+manufacture_dic.btn.addEventListener('click', handleButtonClick);
+in_use_dic.btn.addEventListener('click', handleButtonClick);
+disposal_dic.btn.addEventListener('click', handleButtonClick);
 
-DES_Dic.btn.addEventListener("click", () => {
-  hideAllButtons();
-  fadeIn(DES_List)
-});
+const theButtons = document.getElementById("id-buttons");
 
-
-// 
+// Function starts at a speed and de-accelerates exponentially until it stops near top of the page
+function moveButton() {
+  theButtons.style.animation="list-group-move 0.75s forwards";
+}
