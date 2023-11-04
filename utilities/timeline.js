@@ -23,19 +23,13 @@ export function animateInTimeline(element, animation, position)
 }
 
 btnNext.addEventListener("click", () => {
-    console.log(timelinePos);
     animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), true);
-    console.log("opacity is " + document.getElementById(timeline.element[timelinePos]).style.opacity);
-    console.log("we are running " + document.getElementById(timeline.element[timelinePos]).style.animation);
 
     timelinePos++;
-    
 });
 
 btnBack.addEventListener("click", () => {
     timelinePos > 0 ? timelinePos-- : timelinePos = 0;
-    console.log(timelinePos);
+
     animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
-    console.log("opacity is " + document.getElementById(timeline.element[timelinePos]).style.opacity);
-    console.log("we are running " + document.getElementById(timeline.element[timelinePos]).style.animation);
 });
