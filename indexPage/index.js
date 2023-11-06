@@ -1,6 +1,6 @@
 //READ ME
 
-import { fadeIn, fadeOut } from "/utilities/animations.js";
+import {animations} from '/utilities/animations.js';
 
 const welcomeText = document.getElementById("welcome-text");
 
@@ -10,14 +10,22 @@ const welcomeText = document.getElementById("welcome-text");
 
 const concept_dic = {
   List: [
-    "1",
-    "2",
-    "3",
+    "Understand & Articulate",
+    "Concepualise Solutions",
+    "The Golden Thread",
+    "Estimate Resources",
   ],
   Links: [
-    "",
-    "",
-    ""
+    "/Concept/UnderstandArticulate.html",
+    "/Concept/ConcepualiseSolutions.html",
+    "/Concept/TheGoldenThread.html",
+    "/Concept/UnderstandArticulate.html",
+  ],
+  Description: [
+    "Capability gap or opportunity as a user need",
+    "To define key risks, opportunities, & constraints",
+    "The establishment of the Golden Thread",
+    "Needed to deliver & support solutions",
   ],
   btn: document.getElementById("concept-button"),
 };
@@ -32,6 +40,12 @@ const assessment_dic = {
     "",
     "",
     ""
+  ],
+  Description: [
+    "Capability gap or opportunity as a user need",
+    "To define key risks, opportunities, & constraints",
+    "The establishment of the Golden Thread",
+    "Needed to deliver & support solutions",
   ],
   btn: document.getElementById("assessment-button"),
 };
@@ -215,104 +229,91 @@ hideAllButtons();
 
 concept_dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  fadeIn(concept_list);
+  animations.fadeIn(concept_list, true);
 
-  concept_list.addEventListener('animationend', () => {
+  if (concept_list.style.opacity == 1) {
     assessment_list.style.opacity = 1;
     demonstration_list.style.opacity = 1;
     manufacture_list.style.opacity = 1;
     in_use_list.style.opacity = 1;
     disposal_list.style.opacity = 1;
-  }) 
-  
+  }
 });
 
 assessment_dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  fadeIn(assessment_list);
+  animations.fadeIn(assessment_list, true);
 
-  assessment_list.addEventListener('animationend', () => {
+  if (assessment_list.style.opacity == 1) {
     concept_list.style.opacity = 1;
     demonstration_list.style.opacity = 1;
     manufacture_list.style.opacity = 1;
     in_use_list.style.opacity = 1;
     disposal_list.style.opacity = 1;
-  }) 
+  }
   
 });
 
 demonstration_dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  fadeIn(demonstration_list);
+  animations.fadeIn(demonstration_list, true);
 
-  demonstration_list.addEventListener('animationend', () => {
+  if (demonstration_list.style.opacity == 1) {
     concept_list.style.opacity = 1;
     assessment_list.style.opacity = 1;
     manufacture_list.style.opacity = 1;
     in_use_list.style.opacity = 1;
     disposal_list.style.opacity = 1;
-  }) 
+  }
 
 });
 
 manufacture_dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  fadeIn(manufacture_list);
+  animations.fadeIn(manufacture_list, true);
 
-  manufacture_list.addEventListener('animationend', () => {
+  if (manufacture_list.style.opacity == 1) {
     concept_list.style.opacity = 1;
     assessment_list.style.opacity = 1;
     demonstration_list.style.opacity = 1;
     in_use_list.style.opacity = 1;
     disposal_list.style.opacity = 1;
-  }) 
+  }
 
 });
 
 in_use_dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  fadeIn(in_use_list);
+  animations.fadeIn(in_use_list, true);
 
-  in_use_list.addEventListener('animationend', () => {
+  if (in_use_list.style.opacity == 1) {
     concept_list.style.opacity = 1;
     assessment_list.style.opacity = 1;
     demonstration_list.style.opactiy = 1;
     manufacture_list.style.opacity = 1;
     disposal_list.style.opacity = 1;
-  }) 
+  }
 
 });
 
 disposal_dic.btn.addEventListener("click", () => {
   hideAllButtons();
-  fadeIn(disposal_list);
+  animations.fadeIn(disposal_list, true);
 
-  disposal_list.addEventListener('animationend', () => {
+  if (disposal_list.style.opacity == 1) {
     concept_list.style.opacity = 1;
     assessment_list.style.opacity = 1;
     manufacture_list.style.opacity = 1;
     in_use_list.style.opacity = 1;
     demonstration_list.style.opacity = 1;
-  }) 
+  }
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
 // Define a function to handle the button click event
 function handleButtonClick(event) {
-  console.log('VMOEMOVEMOINGI');
   moveButton();
-  fadeOut(welcomeText);
+  animations.fadeOut(welcomeText, true);
   // Remove the event listeners from all buttons
   concept_dic.btn.removeEventListener('click', handleButtonClick);
   assessment_dic.btn.removeEventListener('click', handleButtonClick);
@@ -337,3 +338,35 @@ const theButtons = document.getElementById("id-buttons");
 function moveButton() {
   theButtons.style.animation="list-group-move 0.75s forwards";
 }
+
+let desc_element = document.getElementById("description");
+let default_text = desc_element.textContent;
+
+// Get 
+function getButtonDescription(dictionary, text)
+{
+  for (var i = 0; i < dictionary.List.length; i++)
+  {
+    if (dictionary.List[i] == text)
+    {
+      //console.log(text);
+      desc_element.textContent = dictionary.Description[i];
+    }
+  }
+}
+
+document.addEventListener('mousemove', function(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+
+  desc_element.textContent = default_text;
+
+  var text = document.elementFromPoint(x, y).textContent; // Get element under mouse position
+
+  getButtonDescription(concept_dic, text);
+  getButtonDescription(assessment_dic, text);
+  getButtonDescription(demonstration_dic, text);
+  getButtonDescription(manufacture_dic, text);
+  getButtonDescription(in_use_dic, text);
+  getButtonDescription(disposal_dic, text);
+});

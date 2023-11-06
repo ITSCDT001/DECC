@@ -1,0 +1,10 @@
+To do list
+
+ - Create 'The Golden Thread' case study
+     - Fix sizing and positioning on case study page
+
+ - Simplify js code with for loops instead of checking each button individually (add them to buttons array)
+
+ - Add logos to each button in home page
+ 
+ - Everything else
