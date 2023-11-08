@@ -4,10 +4,11 @@ import {animations} from './animations.js';
 
 let btnNext = document.getElementById('btn-next');
 let btnBack = document.getElementById('btn-back');
-let btnNextText = btnNext.textContent;
 
 let timelinePos = 0;
 let timelineLength = 0;
+
+let position = 0;
 
 // Create list to hold timeline details (what element is affected and by which animation at every timeline point)
 const timeline = {
@@ -16,11 +17,12 @@ const timeline = {
     repetition: []
 };
 
-export function animateInTimeline(element, animation, position, repetition, appearfirst) // element to be animated, animation, position in timeline, how many elements after the specified to be animated concurrently, whether element is visisble at start
+export function animateInTimeline(element, animation, repetition, appearfirst) // element to be animated, animation, position in timeline, how many elements after the specified to be animated concurrently, whether element is visisble at start
 {
     if (typeof repetition === 'undefined') { repetition = 0; }
     if (typeof appearfirst === 'undefined') { appearfirst = false; }
 
+    document.getElementById(element).style.visibility = appearfirst ? "visible" : "hidden";
     document.getElementById(element).style.opacity = appearfirst ? 1 : 0;
 
     timeline.element[position] = element;
@@ -28,6 +30,7 @@ export function animateInTimeline(element, animation, position, repetition, appe
     timeline.repetition[position] = repetition;
 
     timelineLength++;
+    position++;
 }
 
 btnNext.addEventListener("click", () => {
@@ -48,12 +51,17 @@ btnNext.addEventListener("click", () => {
         }
     }
 
-    //timeline.repetition[timelinePos-1] = repetitions;
+    let videos = document.getElementsByClassName("video");
 
-    // if (timelinePos == timelineLength)
-    // {
-    //     btnNext.textContent = "Home";
-    // }
+    for (let video of videos)
+    {
+        let parent = video.parentElement;
+        if (parent.style.pointerEvents == "none")
+        {
+            video.muted = true;
+            video.pause();
+        }
+    }
 });
 
 btnBack.addEventListener("click", () => {
@@ -62,10 +70,28 @@ btnBack.addEventListener("click", () => {
 
     for (let i = 0; i<=repetitions; i++)
     {
-        timelinePos > 0 ? timelinePos-- : timelinePos = 0;
+        if (timelinePos > 0)
+        {
+            timelinePos--;
 
-        animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
+            animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
+
+            timeline.repetition[timelinePos] = repetitions;
+        } else {
+            timelinePos = 0;
+        }
     }
 
-    timeline.repetition[timelinePos] = repetitions;
+    let videos = document.getElementsByClassName("video");
+
+    for (let video of videos)
+    {
+        let parent = video.parentElement;
+        if (parent.style.pointerEvents == "auto")
+        {
+            video.muted = false;
+            video.currentTime = 0;
+            video.play();
+        }
+    }
 });
