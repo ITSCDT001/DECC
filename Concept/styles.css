@@ -1,0 +1,39 @@
+.ratio {
+    margin: auto;
+    top: 7vh;
+    width: 60vw;
+}
+
+.border-title {
+    width: 100vw; 
+    height: 7vh; 
+}
+
+.display-1 {
+    position: relative;
+    font-size: 4vh;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+}
+
+.underline-length {
+    position: relative;
+    width: 37%;
+    left: 50vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pie{
+    background: transparent;
+    border: none;
+    width:33%;
+    height: auto;
+    margin: auto;
+}
+.container-CaseStudy{
+    align-content: space-evenly;
+    align-items: center;
+
+}

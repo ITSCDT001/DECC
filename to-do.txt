@@ -1,10 +1,6 @@
 To do list
 
- - Case Study Home Page (title, thumbnail, settings)
-
- - Amazon Case Study
-
- - Change positioning stuff to CSS grid-templates
+ - Simplify js code with for loops instead of checking each button individually (add them to buttons array)
 
  - Add logos to each button in home page
 
