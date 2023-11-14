@@ -14,10 +14,13 @@ const concept_dic = {
     "Concepualise Solutions",
     "The Golden Thread",
     "Estimate Resources",
+    "idk but i need another one",
+    "idk but i need another one",
+    "idk but i need another one",
   ],
   Links: [
     "/Concept/UnderstandArticulate.html",
-    "/Concept/ConcepualiseSolutions.html",
+    "/Concept/ConceptualiseSolutions.html",
     "/Concept/TheGoldenThread.html",
     "/Concept/UnderstandArticulate.html",
   ],
@@ -35,6 +38,7 @@ const assessment_dic = {
     "4",
     "5",
     "6",
+    "7",
   ],
   Links: [
     "",
@@ -42,19 +46,20 @@ const assessment_dic = {
     ""
   ],
   Description: [
-    "Capability gap or opportunity as a user need",
-    "To define key risks, opportunities, & constraints",
-    "The establishment of the Golden Thread",
-    "Needed to deliver & support solutions",
+    "",
+    "",
+    "",
+    "",
   ],
   btn: document.getElementById("assessment-button"),
 };
 
 const demonstration_dic = {
   List: [
-    "7",
     "8",
     "9",
+    "10",
+    "11",
   ],
   Links: [
     "",
@@ -66,9 +71,10 @@ const demonstration_dic = {
 
 const manufacture_dic = {
   List: [
-    "10",
-    "11",
     "12",
+    "13",
+    "14",
+    "15",
   ],
   Links: [
     "",
@@ -80,9 +86,10 @@ const manufacture_dic = {
 
 const in_use_dic = {
   List: [
-    "13",
-    "14",
-    "15",
+    "16",
+    "17",
+    "18",
+    "19",
   ],
   Links: [
     "",
@@ -94,9 +101,10 @@ const in_use_dic = {
 
 const disposal_dic = {
   List: [
-    "16",
-    "17",
-    "18",
+    "20",
+    "21",
+    "22",
+    "23",
   ],
   Links: [
     "",
@@ -105,7 +113,6 @@ const disposal_dic = {
   ],
   btn: document.getElementById("disposal-button"),
 };
-
 
 //                                                   //
 //             Creating All The Buttons              //
@@ -121,7 +128,7 @@ function createButtons() {
       //HTML to create a new button
       button = document.createElement("a");
       button.setAttribute("type", "button");
-      button.setAttribute("class", "btn btn-list btn-dark opacity-100 concept");
+      button.setAttribute("class", "btn btn-list btn-dark btn-outline-light");
       button.setAttribute("href", cadmid.dic[i].Links[j]);
       button.style.width = "100%";
       button.style.lineHeight = "8vh";

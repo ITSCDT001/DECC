@@ -67,17 +67,19 @@ body {
 }
 
 .display-1 {
-    padding-top: 1.5vh;
     font-size: 10vh;
-    color: white;
-}
-
-.underline-length {
     position: relative;
-    width: 65%;
-    left: 50vw;
-    transform: translate(-50%, 0);
-
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-bottom: 1px solid white;
 }
 
 /* WELCOME */
@@ -119,16 +121,34 @@ body {
     width: 16%;
     height: 14vh;
     text-align: center;
-
+}
+.btn-dark{
+    background-color: rgba(0,0,0,0.30);
 }
 
 .list-group{
-    height: 10vh;
     position: absolute;
+    height: 40vh;
     left: 50vw;
-    top: 50vh;
-    transform: translate(-50%, -20%);
+    top: 48vh;
+    transform: translate(-50%, 0%);
     width: 66vw;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+.list-group::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+  
+.list-group::-webkit-scrollbar-track {
+background: rgba(0,0,0,0);        /* color of the tracking area */
+}
+
+.list-group::-webkit-scrollbar-thumb {
+background-color: white;   /* color of the scroll thumb */
+border-radius: 5px;       /* roundness of the scroll thumb */
+border: 1px solid white;  /* creates padding around scroll thumb */
 }
 
 .border {

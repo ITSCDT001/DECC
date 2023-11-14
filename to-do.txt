@@ -1,7 +1,7 @@
 To do list
 
  - Change positioning stuff to CSS grid-templates
- 
+
 {
     - Case Study Home Page (title, thumbnail, settings)
 
@@ -11,3 +11,5 @@ To do list
  - Add logos to each button in home page
  
  - Everything else
+
+ - Make sure buttons that appear are all the same height

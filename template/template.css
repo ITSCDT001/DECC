@@ -15,17 +15,10 @@
     text-align: center;
     color: white;
     white-space: nowrap;
-    padding: 0% 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     border-bottom: 1px solid white;
 }
-
-/* .underline-length {
-    position: relative;
-    width: 37%;
-    left: 50vw;
-    top: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 /* -- CASE STUDY -- */
 
