@@ -1,9 +1,13 @@
 To do list
 
- - Simplify js code with for loops instead of checking each button individually (add them to buttons array)
+ - Change positioning stuff to CSS grid-templates
+ 
+{
+    - Case Study Home Page (title, thumbnail, settings)
+
+    - Amazon Case Study
+}
 
  - Add logos to each button in home page
-
- - When on last position of timeline, change 'Next' button to 'Home' button
  
  - Everything else
