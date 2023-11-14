@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
 /* ANIMATIONS */
 
 @keyframes list-group-move {
-    100% {top: 30.75vh;}
+    100% {top: -35%;}
 }
 
 
@@ -17,6 +16,7 @@
       'footer footer footer';
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 25vh 65vh 10vh;
+      grid-auto-flow: row;
   }
 
 header {
@@ -38,25 +38,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* IDS */
-#id-buttons {
-    /* position: absolute; */
-    /* width: 100vw;
-    top: 58vh; */
-}
-
-#btn-group {
-    /* position: relative; */
-    /* left: 50vw;
-    top: 54vh;
-    transform: translate(-50%, 0%); */
-    /* width: 66vw; */
-    border-radius: 1.39vh;
-    /* border: 1px solid white; */
-    /* width: 100vw;
-    height: 100vh;*/
 }
 
 /* NAVBAR */
@@ -86,6 +67,7 @@ body {
 }
 
 .display-1 {
+    padding-top: 1.5vh;
     font-size: 10vh;
     color: white;
 }
@@ -100,12 +82,12 @@ body {
 
 /* WELCOME */
 .container-welcome{
-    /* position: relative; */
-    /* padding-top: 2vh;
+    position: relative;
     width: 33%;
     left: 50vw;
-    transform: translate(-50%, 0); */
-    /* text-overflow: ellipsis; */
+    transform: translate(-50%, 0);
+    top:5%;
+    text-overflow: ellipsis;
 }
 
 
@@ -121,51 +103,44 @@ body {
 
 /* CADMID */
 
-.cadmid-text{
-    /* padding-top: 3vh; */
+.container-cadmid{
+    position: relative;
+    top:15%;
+    
 }
 
-.container-cadmid{
-    /* position: relative; */
-    /* left: 50vw;
-    top: 30vh; */
-    /* transform: translate(-50%, 0%); */
+.cadmid-text{
+    text-align: center;
+    padding-top: 4vh;
 }
 
 .btn {
     font-size: 3vh;
-    /* width: 15%;
-    height: 15vh; */
+    width: 16%;
+    height: 14vh;
     text-align: center;
 
 }
 
 .list-group{
     height: 10vh;
-    font-size: 4.17vh;
-    border-radius: 1.39vh;
-    /* position: absolute; */
-    /* left: 50vw;
+    position: absolute;
+    left: 50vw;
     top: 50vh;
-    transform: translate(-50%, -20%); */
-    /* width: 66vw; */
-    max-height: 60vh;
-    border-radius: 1.39vh;
-    border-color: rgba(33, 37, 41, 1);
+    transform: translate(-50%, -20%);
+    width: 66vw;
 }
 
 .border {
-    /* position: absolute;
-    top: 87vh;
     width: 50vw;
-    transform: translate(50%, 0%); */
+    transform: translate(50%, 0%);
 
 }
 
 /* FOOTER */
 .display-6 {
-    /* position: fixed; */
-    /* top: 94vh;
-    width: 100vw; */
+    position: relative;
+    top: 20%;
+    width: 100vw;
     text-align: center;
 }
