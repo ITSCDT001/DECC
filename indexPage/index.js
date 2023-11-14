@@ -177,7 +177,7 @@ for (let i in cadmid.dic) {
 }
 
 // Define a function to handle the button click event
-function handleButtonClick(event) {
+function handleButtonClick() {
   moveButton();
   animations.fadeOut(welcomeText, true);
   // Remove the event listeners from all buttons

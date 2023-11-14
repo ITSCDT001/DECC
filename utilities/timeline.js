@@ -17,11 +17,8 @@ const timeline = {
     repetition: []
 };
 
-export function animateInTimeline(element, animation, repetition, appearfirst) // element to be animated, animation, position in timeline, how many elements after the specified to be animated concurrently, whether element is visisble at start
+export function animateInTimeline(element, animation, repetition = 0, appearfirst = false) // element to be animated, animation, how many elements after the specified to be animated concurrently, whether element is visible at start
 {
-    if (typeof repetition === 'undefined') { repetition = 0; }
-    if (typeof appearfirst === 'undefined') { appearfirst = false; }
-
     document.getElementById(element).style.visibility = appearfirst ? "visible" : "hidden";
     document.getElementById(element).style.opacity = appearfirst ? 1 : 0;
 
@@ -34,6 +31,10 @@ export function animateInTimeline(element, animation, repetition, appearfirst) /
 }
 
 btnNext.addEventListener("click", () => {
+    if (timelinePos == timelineLength) {
+        window.location.assign("/indexPage/index.html");
+    }
+
     let repetitions = timeline.repetition[timelinePos];
     timeline.repetition[timelinePos] = 0;
 
@@ -59,12 +60,18 @@ btnNext.addEventListener("click", () => {
         }
     }
 
-    // ADD ICON AND TEXT WHEN REACH LAST POS
+    // Change Next button to Home button
 
-    // if (timelinePos == timelineLength) {
-    //     btnNext.textContent = "Home";
-    //     button.setAttribute("class", "btn btn-list btn-dark opacity-100 concept");
-    // }
+    if (timelinePos == timelineLength) {
+
+        btnNext.textContent = " Home ";
+
+        var icon = document.createElement('i');
+
+        icon.setAttribute('class', 'bi-house-fill');
+
+        btnNext.appendChild(icon);
+    }
 });
 
 btnBack.addEventListener("click", () => {
@@ -92,5 +99,18 @@ btnBack.addEventListener("click", () => {
             video.currentTime = 0;
             video.play();
         }
+    }
+
+    // Revert Home button back to Next button
+
+    if (timelinePos < timelineLength) {
+
+        btnNext.textContent = " Next ";
+
+        var icon = document.createElement('i');
+
+        icon.setAttribute('class', 'bi-arrow-right');
+
+        btnNext.appendChild(icon);
     }
 });

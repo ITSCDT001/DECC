@@ -6,19 +6,26 @@
 
 .display-1 {
     position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
     font-size: 4vh;
     text-align: center;
     color: white;
     white-space: nowrap;
+    padding: 0% 1vw;
+    border-bottom: 1px solid white;
 }
 
-.underline-length {
+/* .underline-length {
     position: relative;
     width: 37%;
     left: 50vw;
     top: 50%;
     transform: translate(-50%, -50%);
-}
+} */
 
 /* -- CASE STUDY -- */
 
@@ -28,12 +35,42 @@
 
 }
 
-.ratio {
+/* -- SLIDE 1 -- */
+
+#slide1-container {
     position: absolute;
-    left: 50vw;
-    top: 53vh;
+    display: grid;
+    width: 70vw;
+    height: 50vh;
+    left: 50%;
+    top: 50%;
     transform: translate(-50%, -50%);
-    width: 60vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#slide1-img {
+    height: 100%;
+    width: 100%;
+    grid-row: 1 / 3;
+    grid-column: 1;
+    border: 1vh solid black;
+}
+
+#slide1-title {
+    height: 100%;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 2;
+    border: 1vh solid black;
+}
+
+#slide1-text {
+    height: 100%;
+    width: 100%;
+    grid-row: 2;
+    grid-column: 2;
+    border: 1vh solid black;
 }
 
 .pie{
