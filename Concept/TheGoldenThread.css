@@ -1,78 +1,107 @@
 
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template:
+      'header header header'
+      'left main right'
+      'footer footer footer';
+      grid-template-columns: 15vw 70vw 15vw;
+      grid-template-rows: 15vh 77vh 7vh;
+      grid-auto-flow: row;
+  }
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+main {
+    opacity: 100;
+    grid-area: main;
+    margin: 3%;
+    
+}
+footer {
+    grid-area: footer;
+}
+
+/* HEADER */
+
 .border-title {
-    width: 100vw; 
-    height: 7vh; 
+    height: 100%;
 }
 
 .display-1 {
-    position: relative;
     font-size: 4vh;
+    position: relative;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
     text-align: center;
     color: white;
     white-space: nowrap;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-bottom: 1px solid white;
 }
 
-.underline-length {
-    position: relative;
-    width: 37%;
-    left: 50vw;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
+/* END HEADER */
 
 /* -- CASE STUDY -- */
 
 .container-CaseStudy{
-    align-content: space-evenly;
-    align-items: center;
-
+    width:100%;
+    display:flex;
 }
 
-.ratio {
-    position: absolute;
-    left: 50vw;
-    top: 53vh;
-    transform: translate(-50%, -50%);
-    width: 60vw;
+.ratio{
+    flex:none;
+}
+
+.row{
+    flex:none;
+    width:100%;
+    margin-left: -100%;
+    justify-content: center;
 }
 
 .pie{
-    position: absolute;
+    position: relative;
     background: transparent;
     border: none;
-    width:33%;
-    left: 36vw;
-    top: 53vh;
-    transform: translate(-50%, -50%);
-
+    width:80%;
     height: auto;
+    
+    
 }
 
 .txt{
-    position: absolute;
+    position: relative;
     border: none;
-    font-size: 8vh;
     font-weight: 100%;
-    width: 30%;
-    top: 28vh;
-    left: 29vw;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 5vh;
+    padding-bottom: 30vh;
+    
 }
-
 
 .txt2{
-    position: absolute;
-    border: none;
-    font-size: 5vh;
+    position: relative;
+    border: none;  
+    text-align: center;
     font-weight: 100%;
-    width: 33%;
-    top: 53vh;
-    left: 72vw;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    font-size: 4vh;
 }
 
+/*END SLIDE 2*/
+
 .txt3{
-    position: absolute;
+    /* position: absolute; */
     border: none;
     font-size: 3vh;
     font-weight: 100%;
@@ -109,5 +138,5 @@
     --bs-accordion-body-padding-x: 1.25rem;
     --bs-accordion-body-padding-y: 1rem;
     --bs-accordion-active-color: white;
-    --bs-accordion-active-bg: rgb(34, 73, 112)
+    --bs-accordion-active-bg: rgb(34, 73, 112);
 }
