@@ -1,0 +1,13 @@
+To do list
+
+ - Change positioning stuff to CSS grid-templates
+ 
+{
+    - Case Study Home Page (title, thumbnail, settings)
+
+    - Amazon Case Study
+}
+
+ - Add logos to each button in home page
+ 
+ - Everything else
