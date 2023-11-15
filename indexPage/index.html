@@ -20,110 +20,117 @@
 </head>
 
 <body>
-  <div class="grid-container">
-    <!-- NAVBAR -->
-    <header>
-      <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./index.html">
-            <i class="fa-solid fa-house" style="color: #ffffff"></i>
-          </a>
-          <a class="navbar-brand" href="./index.html">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item active text-light" aria-current="page">
-                  Home
-                </li>
-              </ol>
-            </nav>
-          </a>
-        </div>
-      </nav>
-      <!-- END NAVBAR -->
 
-      <!-- PAGE TITLE -->
-      <div class="bg-primary border-title" data-bs-theme="dark" style="--bs-bg-opacity: .1;">
-        <h1 class="display-1">
-          The DECC's Case Studies
+  <div class="video-container" id="vid_id">
+    <video id="bgvid" autoplay loop muted>
+      <source src="/media/BackgroundVideo7.mp4" type="video/mp4">
+    </video>
+
+    <div class="grid-container">
+      <!-- NAVBAR -->
+      <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+              <i class="fa-solid fa-house" style="color: #ffffff"></i>
+            </a>
+            <a class="navbar-brand" href="./index.html">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active text-light" aria-current="page">
+                    Home
+                  </li>
+                </ol>
+              </nav>
+            </a>
+          </div>
+        </nav>
+        <!-- END NAVBAR -->
+
+        <!-- PAGE TITLE -->
+        <div class="border-title" data-bs-theme="dark">
+          <h1 class="display-1">
+            The DECC's Case Studies
+          </h1>
+        </div>
+      </header>
+
+      <main>
+        <!-- WELCOME -->
+        <div class="text-center container-welcome" id="welcome-text">
+          <blockquote class="blockquote">
+            <p>Welcome</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Use this website to pick time-frame within the CADMID life-cycle and pick a case study that you would like
+            to
+            find
+            out more
+          </figcaption>
+
+          <blockquote class="cadmid-text blockquote">
+            <p>C.A.D.M.I.D</p>
+          </blockquote>
+        </div>
+        <!-- END WELCOME -->
+
+        <div class="container-cadmid" id="id-buttons">
+
+          <div class="col-10 mx-auto d-flex align-items-center justify-content-evenly">
+            <button type="button" class="btn btn-dark btn-outline-light" id="concept-button">
+              Concept
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="assessment-button">
+              Assessment
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="demonstration-button">
+              Demonstrate
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light " id="manufacture-button">
+              Manufacture
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="in-use-button">
+              In-Service
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="disposal-button">
+              Disposal
+            </button>
+          </div>
+
+        </div>
+
+        <div class="list-group list-group-flush" id="concept-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="assessment-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="demonstration-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="manufacture-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="in-use-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="disposal-button-list">
+          <!-- empty -->
+        </div>
+
+      </main>
+
+
+      <!-- FOOTER -->
+      <footer>
+        <hr class="border border-white opacity-50" />
+        <h1 class="display-6 blockquote-footer" id="description">
+          <!-- EMPTY FOR BUTTON DESCRIPTIONS-->
+          Hover over a case study to find out more
         </h1>
-      </div>
-    </header>
-
-    <main>
-
-      <!-- WELCOME -->
-      <div class="text-center container-welcome" id="welcome-text">
-        <blockquote class="blockquote">
-          <p>Welcome</p>
-        </blockquote>
-        <figcaption class="blockquote-footer">
-          Use this website to pick time-frame within the CADMID life-cycle and pick a case study that you would like to
-          find
-          out more
-        </figcaption>
-
-        <blockquote class="cadmid-text blockquote">
-          <p>C.A.D.M.I.D</p>
-        </blockquote>
-      </div>
-      <!-- END WELCOME -->
-
-      <div class="container-cadmid" id="id-buttons">
-
-        <div class="col-10 mx-auto d-flex align-items-center justify-content-evenly">
-          <button type="button" class="btn btn-dark btn-outline-light" id="concept-button">
-            Concept
-          </button>
-          <button type="button" class="btn btn-dark btn-outline-light" id="assessment-button">
-            Assessment
-          </button>
-          <button type="button" class="btn btn-dark btn-outline-light" id="demonstration-button">
-            Demonstrate
-          </button>
-          <button type="button" class="btn btn-dark btn-outline-light " id="manufacture-button">
-            Manufacture
-          </button>
-          <button type="button" class="btn btn-dark btn-outline-light" id="in-use-button">
-            In-Service
-          </button>
-          <button type="button" class="btn btn-dark btn-outline-light" id="disposal-button">
-            Disposal
-          </button>
-        </div>
-
-      </div>
-
-      <div class="list-group list-group-flush" id="concept-button-list">
-        <!-- empty -->
-      </div>
-      <div class="list-group list-group-flush" id="assessment-button-list">
-        <!-- empty -->
-      </div>
-      <div class="list-group list-group-flush" id="demonstration-button-list">
-        <!-- empty -->
-      </div>
-      <div class="list-group list-group-flush" id="manufacture-button-list">
-        <!-- empty -->
-      </div>
-      <div class="list-group list-group-flush" id="in-use-button-list">
-        <!-- empty -->
-      </div>
-      <div class="list-group list-group-flush" id="disposal-button-list">
-        <!-- empty -->
-      </div>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer>
-      <hr class="border border-white opacity-50" />
-      <h1 class="display-6 blockquote-footer" id="description">
-        <!-- EMPTY FOR BUTTON DESCRIPTIONS-->
-        Hover over a case study to find out more
-      </h1>
-    </footer>
-    <!--END FOOTER  -->
+      </footer>
+      <!--END FOOTER  -->
+    </div>
   </div>
 </body>
 

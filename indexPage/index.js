@@ -58,8 +58,6 @@ const demonstration_dic = {
   List: [
     "8",
     "9",
-    "10",
-    "11",
   ],
   Links: [
     "",
@@ -74,7 +72,6 @@ const manufacture_dic = {
     "12",
     "13",
     "14",
-    "15",
   ],
   Links: [
     "",
@@ -131,7 +128,9 @@ function createButtons() {
       button.setAttribute("class", "btn btn-list btn-dark btn-outline-light");
       button.setAttribute("href", cadmid.dic[i].Links[j]);
       button.style.width = "100%";
-      button.style.lineHeight = "8vh";
+      // button.style.height = "50%";
+      button.style.height = "9vh";
+      button.style.lineHeight = "7vh";
       button.innerText = cadmid.dic[i].List[j];
       button.style.margin = "2px 0px";
 

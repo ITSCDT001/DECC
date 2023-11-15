@@ -1,3 +1,17 @@
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index:100;
+
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
 
 .grid-container {
     width: 100%;
@@ -18,7 +32,7 @@ header {
     height: 100%;
 }
 main {
-    opacity: 100;
+    opacity: 0;
     grid-area: main;
     margin: 3%;
     
@@ -31,6 +45,8 @@ footer {
 
 .border-title {
     height: 100%;
+    background-color: rgba(0,0,0,0.20);
+    backdrop-filter: blur(20px);
 }
 
 .display-1 {
@@ -58,11 +74,13 @@ footer {
     display:flex;
 }
 
-.ratio{
+.slide1{
     flex:none;
 }
 
-.row{
+/*END SLIDE 1*/
+
+.slide2{
     flex:none;
     width:100%;
     margin-left: -100%;
@@ -75,8 +93,6 @@ footer {
     border: none;
     width:80%;
     height: auto;
-    
-    
 }
 
 .txt{
@@ -100,15 +116,18 @@ footer {
 
 /*END SLIDE 2*/
 
+.slide3{
+    flex: none;
+    width: 100%;
+    margin-left: -100%;   
+}
+
 .txt3{
-    /* position: absolute; */
+    position: relative;
     border: none;
     font-size: 3vh;
     font-weight: 100%;
-    width: 80%;
-    top: 23vh;
-    left: 10vw;
-    transform: translate(0%, -50%);
+    text-align: center;
 }
 
 .accordion-button{
@@ -121,22 +140,33 @@ footer {
 }
 
 .accordion{
-    position: absolute;
-    font-size: 2vh;
-    width: 80%;
-    left: 50vw;
-    top: 30vh;
-    transform: translate(-50%, 0%);
+    position: relative;
+    top: 5%;
+    font-size: 2.5vh;
+
+    backdrop-filter: blur(20px);
 
     --bs-accordion-color: white;
     --bs-accordion-bg: rgba(33, 37, 41, 0.75);
     --bs-accordion-border-color: rgba(0, 0, 0, 0);
-    --bs-accordion-border-width: 0vh;
     --bs-accordion-btn-color: white;
     --bs-accordion-btn-focus-border-color: white;
     --bs-accordion-btn-focus-box-shadow: 0 0 0 0 white;
-    --bs-accordion-body-padding-x: 1.25rem;
-    --bs-accordion-body-padding-y: 1rem;
     --bs-accordion-active-color: white;
     --bs-accordion-active-bg: rgb(34, 73, 112);
 }
+
+.col-8{
+    padding-top: 1%;
+}
+
+.col-4{
+    text-align: center;
+}
+
+.slide3-images{
+    height: auto;
+    width: 50%;
+}
+
+/*END SLIDE 3*/

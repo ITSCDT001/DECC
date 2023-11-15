@@ -6,6 +6,29 @@
     100% {top: -35%;}
 }
 
+#bg-vid{
+    position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    z-index:100;
+
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+
 
 .grid-container {
     width: 100%;
@@ -52,6 +75,7 @@ body {
 
 .navbar {
     background-color: rgba(33, 37, 41, 1);
+    z-index: 1;
 }
 
 .breadcrumb {
@@ -64,6 +88,8 @@ body {
 
 .border-title {
     height: 100%;
+    background-color: rgba(0,0,0,0.20);
+    backdrop-filter: blur(20px);
 }
 
 .display-1 {
@@ -87,8 +113,8 @@ body {
     position: relative;
     width: 33%;
     left: 50vw;
+    top: 5%;
     transform: translate(-50%, 0);
-    top:5%;
     text-overflow: ellipsis;
 }
 
@@ -99,7 +125,7 @@ body {
 }
 
 .blockquote-footer{
-    color: rgb(200, 200, 200);
+    color: white;
     font-size: 2vh;
 }
 
@@ -121,9 +147,11 @@ body {
     width: 16%;
     height: 14vh;
     text-align: center;
+    
 }
 .btn-dark{
-    background-color: rgba(0,0,0,0.30);
+    background-color: rgba(0,0,0,0.20);
+    backdrop-filter: blur(10px);
 }
 
 .list-group{

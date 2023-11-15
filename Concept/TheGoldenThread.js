@@ -9,3 +9,5 @@ animateInTimeline("slide2-smalltext", "fadeOut");
 animateInTimeline("slide2-text", "fadeOut");
 animateInTimeline("slide3-text", "fadeIn");
 animateInTimeline("slide3-accordion", "fadeIn");
+
+document.querySelector("main").style.opacity = 1;

@@ -17,6 +17,8 @@ const timeline = {
     repetition: []
 };
 
+animations.fadeIn(document.querySelector("Main"), true);
+
 export function animateInTimeline(element, animation, repetition = 0, appearfirst = false) // element to be animated, animation, how many elements after the specified to be animated concurrently, whether element is visible at start
 {
     document.getElementById(element).style.visibility = appearfirst ? "visible" : "hidden";
