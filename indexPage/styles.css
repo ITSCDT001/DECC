@@ -3,8 +3,14 @@
 /* ANIMATIONS */
 
 @keyframes list-group-move {
-    100% {top: -35%;}
+    100% {top: -24%;}
 }
+
+@keyframes black-move {
+    100% {top: 0%;}
+}
+
+/* BACKGROUND VIDEO */
 
 #bg-vid{
     position: absolute;
@@ -15,29 +21,44 @@
 }
 
 .video-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    z-index:100;
+width: 100vw;
+height: 100vh;
+position: relative;
+overflow: hidden;
+z-index:100;
 
-  }
-  
-  .video-container video {
-    width: 100%;
-    height: auto;
-    position: absolute;
-  }
+}
 
+.video-container video {
+top: -5%;
+width: 100%;
+height: auto;
+position: absolute;
+}
+
+/* BLACK SPACE (POSITIONED OUTSIDE GRID CONTAINER) */
+
+.black-space{
+width: 100%;
+height: 100%;
+top: 70%;
+position: absolute;
+background-color: black;
+opacity: 1;
+}
+
+/* CSS GRID-TEMPLATE */
 
 .grid-container {
+    position: absolute;
     width: 100%;
+    height: 100vh;
     display: grid;
     grid-template:
       'header header header'
       'main main main'
       'footer footer footer';
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-rows: 25vh 65vh 10vh;
       grid-auto-flow: row;
   }
@@ -61,28 +82,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: black;
 }
 
-/* NAVBAR */
-
-.navbar .container-fluid {
-    justify-content: left;
-}
-
-.navbar-brand {
-    font-size: 4.17vh;
-}
-
-.navbar {
-    background-color: rgba(33, 37, 41, 1);
-    z-index: 1;
-}
-
-.breadcrumb {
-    margin-bottom: 0px;
-    font-size: 4.17vh;
-    color: white;
-}
+/* NAVBAR - HANDLED BY SETUP.CSS */
 
 /*WEB PAGE TITLE*/
 
@@ -105,41 +108,60 @@ body {
     white-space: nowrap;
     padding-left: 1vw;
     padding-right: 1vw;
-    border-bottom: 1px solid white;
+
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* WELCOME */
 .container-welcome{
+    
     position: relative;
-    width: 33%;
+    width: 55%;
+    height: 20vh;
     left: 50vw;
-    top: 5%;
+    top: 19%;
     transform: translate(-50%, 0);
     text-overflow: ellipsis;
+
+    text-align: end;
+
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+
+    border-radius: 0.5vh;
 }
 
+.welcome{
+    position: relative;
+    top:10%;
+    width: 92%;
+    margin-left: 4%;
+    margin-right: 4%;
 
-.blockquote{
     color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+.welcome-title{
     font-size: 5vh;
 }
 
-.blockquote-footer{
-    color: white;
-    font-size: 2vh;
+.welcome-sub{
+    font-size: 2.5vh;
 }
 
 /* CADMID */
 
 .container-cadmid{
     position: relative;
-    top:15%;
-    
+    top:44%;
 }
 
 .cadmid-text{
+    position: relative;
     text-align: center;
     padding-top: 4vh;
+    top: 33%;
 }
 
 .btn {
@@ -191,4 +213,9 @@ border: 1px solid white;  /* creates padding around scroll thumb */
     top: 20%;
     width: 100vw;
     text-align: center;
+}
+
+.blockquote-footer{
+    color: white;
+    font-size: 2.5vh;
 }
