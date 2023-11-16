@@ -4,6 +4,13 @@ import { animations } from '/utilities/animations.js';
 
 const welcomeText = document.getElementById("welcome-text");
 
+let background = "/media/BackgroundVideo7.2.mp4";
+let video = document.getElementById("bgvid");
+let source = document.createElement("source");
+source.setAttribute("src", background);
+source.setAttribute("type", "video/mp4");
+video.appendChild(source);
+
 //---------------- APPEAR BUTTONS --------------------//
 
 //Dics of buttons for each button the user could press
@@ -199,11 +206,15 @@ for (let i in cadmid.dic) {
 }
 
 const theButtons = document.getElementById("id-buttons");
+const theBlack = document.getElementById("black");
 
 // Function starts at a speed and de-accelerates exponentially until it stops near top of the page
 function moveButton() {
   theButtons.style.animation = "list-group-move 0.75s forwards";
+  theBlack.style.animation = "black-move 1s forwards";
+  video.style.animation = "black-move 1s forwards";
 }
+
 
 let desc_element = document.getElementById("description");
 let default_text = desc_element.textContent;
@@ -217,7 +228,7 @@ function getButtonDescription(dictionary, text) {
   }
 }
 
-document.addEventListener('mousemove', function (e) {
+document.addEventListener('mousemove', (e) => {
   var x = e.clientX;
   var y = e.clientY;
 
@@ -230,3 +241,11 @@ document.addEventListener('mousemove', function (e) {
     getButtonDescription(cadmid.dic[i], text);
   }
 });
+
+theBlack.addEventListener('animationend', () => {
+  background = "/media/BackgroundVideo8.2.mp4";
+  source.setAttribute("src", background);
+  video.load();
+
+  animations.fadeOut(theBlack, true);
+})
