@@ -4,7 +4,7 @@ import { animations } from '/utilities/animations.js';
 
 const welcomeText = document.getElementById("welcome-text");
 
-let background = "/media/BackgroundVideo7.2.mp4";
+let background = "/media/mainBackgroundV4.mp4";
 let video = document.getElementById("bgvid");
 let source = document.createElement("source");
 source.setAttribute("src", background);
@@ -243,7 +243,7 @@ document.addEventListener('mousemove', (e) => {
 });
 
 theBlack.addEventListener('animationend', () => {
-  background = "/media/BackgroundVideo8.2.mp4";
+  background = "/media/ButtonBg.mp4";
   source.setAttribute("src", background);
   video.load();
 
