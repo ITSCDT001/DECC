@@ -2,6 +2,12 @@
 
 import { animations } from './animations.js';
 
+const theBlack = document.getElementById("fade-in");
+animations.fadeOut(theBlack, true);
+
+const theTitle = document.getElementById("title");
+animations.fadeIn(theTitle, true);
+
 let btnNext = document.getElementById('btn-next');
 let btnBack = document.getElementById('btn-back');
 
@@ -32,21 +38,21 @@ export function animateInTimeline(element, animation, repetition = 0, appearfirs
     position++;
 }
 
-btnNext.addEventListener("click", () => {
-    if (timelinePos == timelineLength) {
+btnNext.addEventListener("click", () => { // Next button is clicked
+    if (timelinePos == timelineLength) { // If last in position, return to home page
         window.location.assign("/indexPage/index.html");
     }
 
-    let repetitions = timeline.repetition[timelinePos];
-    timeline.repetition[timelinePos] = 0;
+    let repetitions = timeline.repetition[timelinePos]; // Check how many animations will be run
+    timeline.repetition[timelinePos] = 0; // Reset (for reversal logic)
 
     for (let i = 0; i <= repetitions; i++) {
         if (timelinePos < timelineLength) {
-            animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), true);
+            animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), true); // Animate
 
             timelinePos++;
 
-            timeline.repetition[timelinePos - 1] = repetitions;
+            timeline.repetition[timelinePos - 1] = repetitions; // Set the repetitions to previous stored value (reversal logic)
         } else {
             timelinePos = timelineLength;
         }
@@ -54,7 +60,7 @@ btnNext.addEventListener("click", () => {
 
     let videos = document.getElementsByClassName("video");
 
-    for (let video of videos) {
+    for (let video of videos) { // Pause and mute all videos on previous page
         let parent = video.parentElement;
         if (parent.style.pointerEvents == "none") {
             video.muted = true;
@@ -76,7 +82,7 @@ btnNext.addEventListener("click", () => {
     }
 });
 
-btnBack.addEventListener("click", () => {
+btnBack.addEventListener("click", () => { // Back button is clicked
     let repetitions = timeline.repetition[timelinePos - 1];
     timeline.repetition[timelinePos - 1] = 0;
 
@@ -94,7 +100,7 @@ btnBack.addEventListener("click", () => {
 
     let videos = document.getElementsByClassName("video");
 
-    for (let video of videos) {
+    for (let video of videos) { // Reset and play previous videos
         let parent = video.parentElement;
         if (parent.style.pointerEvents == "auto") {
             video.muted = false;
