@@ -42,7 +42,7 @@ main {
     opacity: 1;
     grid-area: main;
     margin: 3%;
-    
+
 }
 footer {
     grid-area: footer;
@@ -68,14 +68,60 @@ footer {
 
 /* -- CASE STUDY -- */
 
-/*SLIDE 1*/
+/* -- SLIDE 1 -- */
 
 .container-CaseStudy {
     width:100%;
     display:flex;
     pointer-events: auto;
+    height: 100%;
+}
+
+.pie{
+    position: relative;
+    background: transparent;
+    border: none;
+    width:80%;
+    height: auto;
+}
+
+.txt{
+    position: relative;
+    border: none;
+    font-weight: 100%;
+    width: 100%;
+    font-size: 5vh;
+    padding-bottom: 30vh;
+    
+}
+
+.txt2{
+    position: relative;
+    border: none;  
+    text-align: center;
+    font-weight: 100%;
+    width: 100%;
+    font-size: 4vh;
+}
+
+/*SLIDE 2*/
+
+.slide2{
+    flex:none;
+    width:100%;
+    margin-left: -100%;
+    justify-content: center;
+}
+
+/*SLIDE 3 */
+
+.slide3{
+    flex:none;
+    width:100%;
+    margin-left: -100%;
+    justify-content: center;
 }
 
 .carousel-inner .item {
     min-height: 400px;
-    }
+}
