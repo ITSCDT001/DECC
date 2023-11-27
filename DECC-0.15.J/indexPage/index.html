@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/utilities/setup.css" />
+
+  <link rel="stylesheet" href="./styles.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="video-container" id="vid_id">
+    <video id="bgvid" autoplay loop muted>
+    </video>
+
+    <div class="black-space" id="black">
+    </div>
+
+    <div class="grid-container">
+      <!-- NAVBAR -->
+      <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">
+              <i class="fa-solid fa-house" style="color: #ffffff"></i>
+            </a>
+            <a class="navbar-brand" href="./index.html">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item active text-light" aria-current="page">
+                    Home
+                  </li>
+                </ol>
+              </nav>
+            </a>
+          </div>
+        </nav>
+        <!-- END NAVBAR -->
+
+        <!-- PAGE TITLE -->
+        <div class="border-title" data-bs-theme="dark">
+          <h1 class="display-1">
+            The DECC's Case Studies
+          </h1>
+        </div>
+      </header>
+
+      <main>
+        <!-- WELCOME -->
+        <div class="text-center container-welcome" id="welcome-text">
+          <blockquote class="welcome welcome-title">
+            <p>Welcome</p>
+          </blockquote>
+          <figcaption class="welcome welcome-sub">
+            Use this website to pick a time-frame within the CADMID life-cycle and select a case study that you would
+            like to find out more
+          </figcaption>
+        </div>
+        <!-- END WELCOME -->
+
+        <div class="container-cadmid" id="id-buttons">
+
+          <div class="col-10 mx-auto d-flex align-items-center justify-content-evenly">
+            <button type="button" class="btn btn-dark btn-outline-light" id="concept-button">
+              Concept
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="assessment-button">
+              Assessment
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="demonstration-button">
+              Demonstrate
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light " id="manufacture-button">
+              Manufacture
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="in-use-button">
+              In-Service
+            </button>
+            <button type="button" class="btn btn-dark btn-outline-light" id="disposal-button">
+              Disposal
+            </button>
+          </div>
+
+        </div>
+
+        <div class="list-group list-group-flush" id="concept-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="assessment-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="demonstration-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="manufacture-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="in-use-button-list">
+          <!-- empty -->
+        </div>
+        <div class="list-group list-group-flush" id="disposal-button-list">
+          <!-- empty -->
+        </div>
+
+      </main>
+
+
+      <!-- FOOTER -->
+      <footer>
+        <hr class="border border-white opacity-50" />
+        <h1 class="display-6 blockquote-footer" id="description">
+          <!-- EMPTY FOR BUTTON DESCRIPTIONS-->
+          Hover over a case study to find out more
+        </h1>
+      </footer>
+      <!--END FOOTER  -->
+    </div>
+  </div>
+</body>
+
+<script src="./index.js" type="module"></script>
+<script src="/utilities/setup.js"></script>
+
+</html>
