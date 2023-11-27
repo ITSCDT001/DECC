@@ -101,7 +101,9 @@ footer {
     text-align: center;
     font-weight: 100%;
     width: 100%;
-    font-size: 4vh;
+    font-size: 3.5vh;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 20px;
 }
 
 /*SLIDE 2*/
@@ -123,5 +125,9 @@ footer {
 }
 
 .carousel-inner .item {
-    min-height: 400px;
+    min-height: 200px;
 }
+
+.carousel-inner > .item > img {
+    border-radius: 100px;
+  }
