@@ -8,6 +8,8 @@ animations.fadeOut(theBlack, true);
 const theTitle = document.getElementById("title");
 animations.fadeIn(theTitle, true);
 
+const subtitle = document.getElementById("subtitle");
+
 let btnNext = document.getElementById('btn-next');
 let btnBack = document.getElementById('btn-back');
 
@@ -20,22 +22,29 @@ let position = 0;
 const timeline = {
     element: [],
     animation: [],
+    subtitleText: [],
     repetition: []
 };
 
 animations.fadeIn(document.querySelector("Main"), true);
 
-export function animateInTimeline(element, animation, repetition = 0, appearfirst = false) // element to be animated, animation, how many elements after the specified to be animated concurrently, whether element is visible at start
+export function animateInTimeline(element, animation, subtitleText, repetition = 0, appearFirst = false) // element to be animated, animation, how many elements after the specified to be animated concurrently, whether element is visible at start
 {
-    document.getElementById(element).style.visibility = appearfirst ? "visible" : "hidden";
-    document.getElementById(element).style.opacity = appearfirst ? 1 : 0;
+    document.getElementById(element).style.visibility = appearFirst ? "visible" : "hidden";
+    document.getElementById(element).style.opacity = appearFirst ? 1 : 0;
 
     timeline.element[position] = element;
     timeline.animation[position] = animation;
+    timeline.subtitleText[position] = subtitleText;
     timeline.repetition[position] = repetition;
 
     timelineLength++;
     position++;
+
+    subtitle.textContent = timeline.subtitleText[0];
+
+    if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
+    else subtitle.style.visibility = "visible";
 }
 
 btnNext.addEventListener("click", () => { // Next button is clicked
@@ -49,6 +58,10 @@ btnNext.addEventListener("click", () => { // Next button is clicked
     for (let i = 0; i <= repetitions; i++) {
         if (timelinePos < timelineLength) {
             animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), true); // Animate
+            subtitle.textContent = timeline.subtitleText[timelinePos];
+
+            if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
+            else subtitle.style.visibility = "visible";
 
             timelinePos++;
 
@@ -91,6 +104,10 @@ btnBack.addEventListener("click", () => { // Back button is clicked
             timelinePos--;
 
             animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
+            subtitle.textContent = timeline.subtitleText[Math.max(0, timelinePos - 1)];
+
+            if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
+            else subtitle.style.visibility = "visible";
 
             timeline.repetition[timelinePos] = repetitions;
         } else {
