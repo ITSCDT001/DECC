@@ -21,7 +21,7 @@ const concept_dic = {
     "Concepualise Solutions",
     "The Golden Thread",
     "Extended Reality",
-    "Amazon Distribution",
+    "Breaking away from Biological Bias",
     "idk but i need another one",
     "idk but i need another one",
   ],
