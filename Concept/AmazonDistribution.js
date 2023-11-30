@@ -46,10 +46,28 @@ animateInTimeline("slide6-img", "fadeIn", subtitleText);
 
 // Slide 7
 subtitleText = "Using structured layouts..."
-animateInTimeline("slide6-img", "moveLeft75Shrink", subtitleText, 2);
+animateInTimeline("slide6-img", "moveLeft70Shrink", subtitleText, 2);
 animateInTimeline("black-screen", "fadeIn", subtitleText, 0, true);
 animateInTimeline("slide7-lockers", "fadeIn", subtitleText);
-subtitleText = "...and a corresponding inventory list, the operator is able to locate specific items among millions of others.";
+subtitleText = "...and a corresponding inventory list...";
 animateInTimeline("slide7-list", "fadeIn", subtitleText);
+subtitleText = "...the operator is able to locate specific items among millions of others.";
+animateInTimeline("slide7-arrow1", "fadeIn", subtitleText, 2);
+animateInTimeline("slide7-arrow2", "fadeIn", subtitleText);
+animateInTimeline("slide7-arrow3", "fadeIn", subtitleText);
+
+// Slide 8
+subtitleText = "For many distribution companies, the digital journey has been evolutionary; first, by digitising their analogue inventory lists...";
+animateInTimeline("slide6-img", "fadeOut", subtitleText, 7);
+animateInTimeline("slide7-lockers", "fadeOut", subtitleText);
+animateInTimeline("slide7-list", "fadeOut", subtitleText);
+animateInTimeline("slide7-arrow1", "fadeOut", subtitleText);
+animateInTimeline("slide7-arrow2", "fadeOut", subtitleText);
+animateInTimeline("slide7-arrow3", "fadeOut", subtitleText);
+animateInTimeline("slide8-monitor", "fadeIn", subtitleText);
+animateInTimeline("slide8-phone", "fadeIn", subtitleText);
+subtitleText = "...and then by making the information available to the operator at the point of use, with handheld devices and barcoded information.";
+animateInTimeline("slide8-barcode", "fadeIn", subtitleText, 1);
+animateInTimeline("slide8-scan", "partFadeInGrow", subtitleText);
 
 document.querySelector("main").style.opacity = 1;

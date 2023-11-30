@@ -157,4 +157,32 @@ footer {
 
 .carousel-inner > .item > img {
     border-radius: 100px;
-  }
+}
+
+/*SLIDE 4 */
+
+/* .slide4{
+    flex:none;
+    width:100%;
+    margin-left: -100%;
+    justify-content: center;
+} */
+
+.slide4Grid{
+    flex:none;
+    width: 100%;
+    margin-left: -100%;
+    display: grid;
+    grid-template:
+      'top'
+      'bottom';
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-flow: row;
+}
+
+.top{
+    grid-area: top;
+    display: flex;
+    justify-content: center;
+}

@@ -1,7 +1,22 @@
 To do list
 
- - Case Study Home Page (title, thumbnail, settings)
+- Case Study Home Page (title, thumbnail, settings)
 
- - Amazon Case Study
- 
- - Everything else
+- WIP Case Studies
+    - Amazon Distribution
+    - Extended Reality
+        - Main Story
+        - Feedback Loops
+
+- More 'techy' background
+
+- Context for case Studies
+    - Wiki-style hover
+    - Establish a new government (create a country)
+    - Pre-reading & further reading for each Case Study
+
+- Case Study Library
+
+- Good Practice Guide
+
+- Everything else

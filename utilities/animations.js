@@ -30,6 +30,16 @@ animations.fadeInGrow = (element, forward) => {
     element.style.pointerEvents = forward ? "auto" : "none";
 }
 
+// Part Fades
+
+animations.partFadeInGrow = (element, forward) => {
+    element.style.transition = "opacity 0.75s linear, transform 0.75s linear";
+    element.style.opacity = forward ? 0.5 : 0;
+    element.style.transform = forward ? "scale(1)" : "scale(0)";
+    element.style.visibility = "visible";
+    element.style.pointerEvents = forward ? "auto" : "none";
+}
+
 // Moves
 
 animations.moveLeft100 = (element, forward) => {
@@ -37,7 +47,7 @@ animations.moveLeft100 = (element, forward) => {
     element.style.transform = forward ? "translateX(-100%)" : "translateX(0%)";
 }
 
-animations.moveLeft75Shrink = (element, forward) => {
+animations.moveLeft70Shrink = (element, forward) => {
     element.style.transition = "transform 1s";
     element.style.transform = forward ? "translateX(-70%) scale(0.6)" : "translateX(0%) scale(1)";
 }

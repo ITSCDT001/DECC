@@ -13,6 +13,11 @@ animateInTimeline("slide2-smallTxt", "fadeOut", "");
 animateInTimeline("slide2-text", "fadeOut", "");
 
 animateInTimeline("slide3", "fadeIn", "");
+animateInTimeline("slide3", "fadeOut", "", 1);
+
+animateInTimeline("slide4", "fadeIn");
+
+
 
 
 document.querySelector("main").style.opacity = 1;
