@@ -184,5 +184,12 @@ footer {
 .top{
     grid-area: top;
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.designTimeline{
+    width:auto;
+    height: 20vh;
+    
 }

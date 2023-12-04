@@ -8,6 +8,8 @@ To do list
         - Main Story
         - Feedback Loops
 
+- Rework Animation System (use lists of end-point values instead of prewritten animation functions)
+
 - More 'techy' background
 
 - Context for case Studies
@@ -18,5 +20,7 @@ To do list
 - Case Study Library
 
 - Good Practice Guide
+
+-Make triangle opoacity 0.5 in original image
 
 - Everything else
