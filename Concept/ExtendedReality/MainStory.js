@@ -1,8 +1,8 @@
 import { animateInTimeline } from "/utilities/timeline.js";
 
-animateInTimeline("slide1-pie", "fadeOut", "", 5, true);
-animateInTimeline("slide1-smallTxt", "fadeOut", "", 0, true);
-animateInTimeline("slide1-text", "fadeOut", "", 0, true);
+animateInTimeline("slide1-pie", "fadeOut", "", 5, 0, true);
+animateInTimeline("slide1-smallTxt", "fadeOut", "", 0, 0, true);
+animateInTimeline("slide1-text", "fadeOut", "", 0, 0, true);
 
 animateInTimeline("slide2-pie", "fadeIn", "");
 animateInTimeline("slide2-smallTxt", "fadeIn", "");

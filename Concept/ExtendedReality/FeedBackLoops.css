@@ -467,6 +467,24 @@ img {
 }
 
 .slide10-img2, .slide10-img3, .slide10-img4 {
-  height: 30vh;
+  height: 50vh;
   width: auto;
 } 
+
+.slide10-item2 {
+  position: absolute;
+  top: 30vh;
+  left: 0;
+}
+
+.slide10-item3 {
+  position: absolute;
+  top: 30vh;
+  left: 35vw;
+}
+
+.slide10-item4 {
+  position: absolute;
+  top: 30vh;
+  left: 70vw;
+}
