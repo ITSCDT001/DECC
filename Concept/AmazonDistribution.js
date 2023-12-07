@@ -13,7 +13,7 @@ animateInTimeline("slide2-img", "fadeIn", subtitleText);
 // Slide 3
 subtitleText = "Accordingly, the brain is hard-wired to recognise patterns...";
 
-animateInTimeline("slide2-img", animate[0, 0, 0, 0, 0], subtitleText, 2);
+animateInTimeline("slide2-img", "fadeIn", subtitleText, 2);
 animateInTimeline("black-screen", "fadeOut", subtitleText, 0, 0, true);
 animateInTimeline("slide3-eggs", "fadeIn", subtitleText);
 subtitleText = "...favour symmetry...";
@@ -33,7 +33,6 @@ subtitleText = "...cortisol (the stress hormone) is higher in people who spend t
 animateInTimeline("slide4-mess", "fadeIn", subtitleText);
 
 // Slide 5
-
 subtitleText = "The human pursuit of order is such that there are whole social media communities dedicated to high quality images of organised items.";
 animateInTimeline("slide3-cupboard", "fadeOut", subtitleText, 3);
 animateInTimeline("slide4-mess", "fadeOut", subtitleText);

@@ -4,6 +4,7 @@ To do list
 
 - WIP Case Studies
     - Amazon Distribution
+        -Add Cricket animate 
     - Extended Reality
         - Main Story
         - Feedback Loops
@@ -21,6 +22,6 @@ To do list
 
 - Good Practice Guide
 
--Make triangle opoacity 0.5 in original image
+- Make triangle opoacity 0.5 in original image
 
 - Everything else

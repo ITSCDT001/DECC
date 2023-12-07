@@ -128,13 +128,11 @@ footer {
     text-align: center;
     font-weight: 100%;
     width: 100%;
-    font-size: 3.5vh;
+    font-size: 3.25vh;
     background-color: rgba(0,0,0,0.4);
-    border-radius: 20px;
 }
 
 /*SLIDE 2*/
-
 .slide2{
     flex:none;
     width:100%;
@@ -168,7 +166,7 @@ footer {
     justify-content: center;
 } */
 
-.slide4Grid{
+.slide45Grid{
     flex:none;
     width: 100%;
     margin-left: -100%;
@@ -188,8 +186,48 @@ footer {
     justify-content: center;
 }
 
+.bottom{
+    grid-area: bottom;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
 .designTimeline{
     width:auto;
-    height: 20vh;
+    height: 30vh;
     
 }
+
+.slide5-Top{
+    grid-area: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s56-Col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide56-Bottom{
+    grid-area: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.designTimelinePar{
+    width:auto;
+    height: 30vh;
+}
+
+.designTimelineCycles{
+    width:auto;
+    height: 20vh;
+    padding-top: 1vh;
+}
+

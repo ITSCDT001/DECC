@@ -17,6 +17,13 @@ animateInTimeline("slide3", "fadeOut", "", 1);
 
 animateInTimeline("slide4", "fadeIn");
 
+animateInTimeline("slide4", "fadeOut", "", 2);
+animateInTimeline("slide5-Top", "fadeIn", "");
+animateInTimeline("slide5-Bottom", "fadeIn", "");
+
+animateInTimeline("slide5-Bottom", "fadeOut", "", 1);
+animateInTimeline("slide6", "fadeIn", "");
+
 
 
 
