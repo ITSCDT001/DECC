@@ -1,12 +1,14 @@
 To do list
 
+-Edit case study structure (more user freindly for touch screen) css grid, next and back in the left and right area
+    -Maybe put subtitles in its own css grid area if the bottom next and back navbar goes away?
+
 - Case Study Home Page (title, thumbnail, settings)
 
 - WIP Case Studies
     - Amazon Distribution
         -Add Cricket animate 
     - Extended Reality
-        - Main Story
         - Feedback Loops
 
 - Rework Animation System (use lists of end-point values instead of prewritten animation functions)

@@ -140,10 +140,56 @@
   
   .slide3-container {
     position: relative;
-    top: 10vh;
+    top: 0;
     flex: none;
     width: 100%;
     height: 100%;
     margin-left: 0%;
     justify-content: center;
+  }
+
+  .second-part, .first-part {
+    position: relative;
+  }
+
+  .slide3-item1 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 20%;
+  }
+
+  .slide3-item2 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+  }
+
+  .slide3-item3 {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    height: auto;
+  }
+
+  .slide3-item4 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+  }
+
+  .slide3-item5 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+  }
+
+  .slide3-item6 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
   }

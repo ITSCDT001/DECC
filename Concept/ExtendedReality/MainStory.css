@@ -200,16 +200,13 @@ footer {
 }
 
 .slide5-Top{
-    grid-area: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-top: 3vh;
+    grid-area: top;  
 }
 
 .s56-Col{
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .slide56-Bottom{
@@ -217,12 +214,13 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 5vh;
 }
 
 
 .designTimelinePar{
     width:auto;
-    height: 30vh;
+    height: 27vh;
 }
 
 .designTimelineCycles{
@@ -231,3 +229,105 @@ footer {
     padding-top: 1vh;
 }
 
+.storyButton{
+    font-weight: 100%;
+    font-size: 3.25vh;
+    width: 17vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    background-color: rgba(0,0,0,0.20);
+    backdrop-filter: blur(10px);
+}
+
+.slide6Align{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-left{
+    display: flex;
+    justify-content: end;
+}
+
+.col-right{
+    padding-left: 3vw;
+}
+
+/* SLIDE 7 */
+.slide7{
+    flex:none;
+    width: 100%;
+    margin-left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.presentImg{
+    width: 90%;
+    height: auto;
+}
+
+/* SLIDE 8 */
+.slide8{
+    flex:none;
+    width: 100%;
+    margin-left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+/* SLIDE 9 */
+.slide9{
+    flex:none;
+    width: 100%;
+    margin-left: -100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clayImg{
+    width: 90%;
+    height: auto;
+}
+
+.col-4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.months{
+    width: 80%;
+    height: auto;
+}
+
+.timeToMarket{
+    width: 95%;
+    height: auto;
+}
+
+/* END SLIDE 9 */
+
+/* SLIDE 10 */
+
+.slide10{
+    flex:none;
+    width: 100%;
+    margin-left: -100%;
+}
+
+.digitalModel{
+    width: 90%;
+    height: auto;
+}
+
+.col-4{
+    display: flex;
+    justify-content: center;
+    
+}
