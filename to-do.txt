@@ -1,7 +1,29 @@
 To do list
 
- - Case Study Home Page (title, thumbnail, settings)
+-Edit case study structure (more user freindly for touch screen) css grid, next and back in the left and right area
+    -Maybe put subtitles in its own css grid area if the bottom next and back navbar goes away?
 
- - Amazon Case Study
- 
- - Everything else
+- Case Study Home Page (title, thumbnail, settings)
+
+- WIP Case Studies
+    - Amazon Distribution
+        -Add Cricket animate 
+    - Extended Reality
+        - Feedback Loops
+
+- Rework Animation System (use lists of end-point values instead of prewritten animation functions)
+
+- More 'techy' background
+
+- Context for case Studies
+    - Wiki-style hover
+    - Establish a new government (create a country)
+    - Pre-reading & further reading for each Case Study
+
+- Case Study Library
+
+- Good Practice Guide
+
+- Make triangle opoacity 0.5 in original image
+
+- Everything else

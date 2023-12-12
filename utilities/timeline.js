@@ -23,13 +23,34 @@ const timeline = {
     element: [],
     animation: [],
     subtitleText: [],
-    repetition: []
+    repetition: [],
+    delay: [],
 };
+
+// Create animation queue to ensure all animations are played in sequence
+var animationQueue = [];
 
 animations.fadeIn(document.querySelector("Main"), true);
 
-export function animateInTimeline(element, animation, subtitleText, repetition = 0, appearFirst = false) // element to be animated, animation, how many elements after the specified to be animated concurrently, whether element is visible at start
-{
+// Create async delay function
+function delay(milliseconds) {
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
+
+// animateInTimeline Function
+//
+// element = element to be animated
+// animation = animation to be used
+// subtitleText = text to appear in the subtitle when element is animated
+// repetition = how many elements after the specified to be animated concurrently
+// delay = delay in milliseconds between subsequent animations (if repetition > 0)
+// appearFirst = whether the element is visible on load
+//
+// ------------------------------
+
+export function animateInTimeline(element, animation, subtitleText = "", repetition = 0, delay = -1, appearFirst = false) {
     document.getElementById(element).style.visibility = appearFirst ? "visible" : "hidden";
     document.getElementById(element).style.opacity = appearFirst ? 1 : 0;
 
@@ -37,6 +58,7 @@ export function animateInTimeline(element, animation, subtitleText, repetition =
     timeline.animation[position] = animation;
     timeline.subtitleText[position] = subtitleText;
     timeline.repetition[position] = repetition;
+    timeline.delay[position] = delay;
 
     timelineLength++;
     position++;
@@ -47,6 +69,29 @@ export function animateInTimeline(element, animation, subtitleText, repetition =
     else subtitle.style.visibility = "visible";
 }
 
+// Progress timeline function, async to be used with a delay
+async function progressTimeline(repetitions, activator) { // Repeats for number of elements specified in timeline, activator holds the first elements number (for delay value) 
+    let delayVal = 0;
+
+    for (let i = 0; i <= repetitions; i++) {
+        while (animationQueue.length > 0) {
+            let pos = animationQueue.shift();
+
+            if (timeline.delay[pos] != -1) {
+                delayVal = timeline.delay[pos];
+            }
+
+            animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // Animate
+            subtitle.textContent = timeline.subtitleText[pos];
+
+            if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
+            else subtitle.style.visibility = "visible";
+
+            await delay(delayVal); // Delay by set number of milliseconds (delay value set in the first affected element only)
+        }
+    }
+}
+
 btnNext.addEventListener("click", () => { // Next button is clicked
     if (timelinePos == timelineLength) { // If last in position, return to home page
         window.location.assign("/indexPage/index.html");
@@ -55,13 +100,11 @@ btnNext.addEventListener("click", () => { // Next button is clicked
     let repetitions = timeline.repetition[timelinePos]; // Check how many animations will be run
     timeline.repetition[timelinePos] = 0; // Reset (for reversal logic)
 
+    let activator = timelinePos;
+
     for (let i = 0; i <= repetitions; i++) {
         if (timelinePos < timelineLength) {
-            animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), true); // Animate
-            subtitle.textContent = timeline.subtitleText[timelinePos];
-
-            if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
-            else subtitle.style.visibility = "visible";
+            animationQueue.push(timelinePos);
 
             timelinePos++;
 
@@ -70,6 +113,8 @@ btnNext.addEventListener("click", () => { // Next button is clicked
             timelinePos = timelineLength;
         }
     }
+
+    progressTimeline(repetitions, activator);
 
     let videos = document.getElementsByClassName("video");
 
