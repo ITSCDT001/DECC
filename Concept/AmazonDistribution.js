@@ -4,7 +4,7 @@ let subtitleText;
 
 // Slide 1
 subtitleText = "The human brain primarily operates using predictive models, which it builds based on previous experiences.";
-animateInTimeline("slide1-img", "fadeOutShrink", subtitleText, 1, 0, true);
+animateInTimeline("slide1-img", [null, null, 0, null, 0], subtitleText, 1, 0, true);
 
 // Slide 2
 subtitleText = "*Cricket Example*";

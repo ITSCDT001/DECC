@@ -25,6 +25,7 @@ const timeline = {
     subtitleText: [],
     repetition: [],
     delay: [],
+    defaultvals: []
 };
 
 // Create animation queue to ensure all animations are played in sequence
@@ -59,6 +60,7 @@ export function animateInTimeline(element, animation, subtitleText = "", repetit
     timeline.subtitleText[position] = subtitleText;
     timeline.repetition[position] = repetition;
     timeline.delay[position] = delay;
+    timeline.defaultvals[position] = [element.style.transform, element.style.opacity];
 
     timelineLength++;
     position++;
@@ -81,7 +83,16 @@ async function progressTimeline(repetitions, activator) { // Repeats for number 
                 delayVal = timeline.delay[pos];
             }
 
-            animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // Animate
+            // animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // Animate
+
+            if (typeof timeline.animation[pos] === "string") {
+                animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // Animate
+            } else {
+                animations.animate(document.getElementById(timeline.element[pos]), true, timeline.animation[pos], ["", 0]);
+            }
+
+            // animations.animate(document.getElementById(timeline.element[pos]), true, timeline.animation[pos]);
+
             subtitle.textContent = timeline.subtitleText[pos];
 
             if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
@@ -148,7 +159,14 @@ btnBack.addEventListener("click", () => { // Back button is clicked
         if (timelinePos > 0) {
             timelinePos--;
 
-            animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
+            // animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
+
+            if (typeof timeline.animation[timelinePos] === "string") {
+                animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false); // Animate
+            } else {
+                animations.animate(document.getElementById(timeline.element[timelinePos]), true, timeline.animation[timelinePos], timeline.defaultvals[timelinePos]);
+            }
+
             subtitle.textContent = timeline.subtitleText[Math.max(0, timelinePos - 1)];
 
             if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
