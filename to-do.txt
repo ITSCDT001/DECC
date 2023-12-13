@@ -1,7 +1,8 @@
 To do list
 
 -Edit case study structure (more user freindly for touch screen) css grid, next and back in the left and right area
-    -Maybe put subtitles in its own css grid area if the bottom next and back navbar goes away?
+    - Maybe put subtitles in its own css grid area if the bottom next and back navbar goes away? (See Wireframe)
+    - Progress bar in footer
 
 - Case Study Home Page (title, thumbnail, settings)
 
@@ -10,9 +11,6 @@ To do list
         -Add Cricket animate 
     - Extended Reality
         - Feedback Loops
-
-- Rework Animation System (use lists of end-point values instead of prewritten animation functions)
-
 - More 'techy' background
 
 - Context for case Studies
@@ -24,6 +22,10 @@ To do list
 
 - Good Practice Guide
 
-- Make triangle opoacity 0.5 in original image
+- Add subtle noise effects to button clicks
+
+- Change home page css to use display flex
+
+- Documentation of program
 
 - Everything else
