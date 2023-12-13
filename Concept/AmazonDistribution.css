@@ -371,6 +371,7 @@ footer {
     width: 100%;
     margin-left: -100%;
     justify-content: center;
+    transform: translateX(-2.5%);
 }
 
 #slide9-img{
@@ -380,4 +381,117 @@ footer {
 
     width: 80%;
     height: auto;
+}
+
+.slide9-items{
+    flex: none;
+    width: 100%;
+    margin-top: 7%;
+    margin-left: -100%;
+    justify-content: center;
+}
+
+.slide9-items>*{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.slide9-item{
+    position: relative;
+    background: transparent;
+    border: none;
+
+    bottom: 10%;
+
+    margin-right: -15%;
+    margin-left: -15%;
+    
+    width: 50%;
+    height: auto;
+}
+
+.slide9-items-row{
+    margin-top: 4%;
+    margin-bottom: -0.5%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+}
+
+/* INDIVIDUAL ITEMS */
+
+#slide9-bear2{
+    transform: translateY(30%);
+}
+
+#slide9-bear3{
+    transform: translateY(60%);
+}
+
+#slide9-bucket2
+{
+    transform: translateY(20%);
+}
+
+#slide9-bucket3{
+    transform: translateY(40%);
+}
+
+#slide9-horse2
+{
+    transform: translateY(40%);
+}
+
+#slide9-horse3{
+    transform: translateY(80%);
+}
+
+#slide9-ball1
+{
+    transform: translateY(-30%);
+}
+
+#slide9-ball3{
+    transform: translateY(30%);
+}
+
+#slide9-train1
+{
+    transform: translateY(-50%);
+}
+
+#slide9-train3{
+    transform: translateY(50%);
+}
+
+#slide9-duck1
+{
+    transform: translateY(-40%);
+}
+
+#slide9-duck2{
+    transform: translateY(-10%);
+}
+
+#slide9-duck3{
+    transform: translateY(30%);
+}
+
+#slide9-rattle2{
+    transform: translateY(-40%);
+}
+
+#slide9-rattle3{
+    transform: translateY(20%);
+}
+
+#slide9-bike1{
+    transform: translateY(-50%);
+}
+
+#slide9-bike2{
+    transform: translateY(-10%);
+}
+
+#slide9-bike3{
+    transform: translateY(30%);
 }

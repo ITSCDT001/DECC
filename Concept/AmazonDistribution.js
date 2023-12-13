@@ -2,9 +2,20 @@ import { animateInTimeline } from "/utilities/timeline.js";
 
 let subtitleText;
 
+//////////////////////////////////////////////////////////////////////////////////////////
+// ANIMATION PRESETS
+
+// fadeIn, fadeOut, fadeInGrow, fadeOutShrink
+
+// ADVANCED ANIMATIONS
+
+//   [ X , Y , SCALE , ROTATION , END-OPACITY , START-OPACITY , DURATION (seconds) , EASE-TYPE (linear/ease/ease-in/ease-out) ]
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
 // Slide 1
 subtitleText = "The human brain primarily operates using predictive models, which it builds based on previous experiences.";
-animateInTimeline("slide1-img", [null, null, 0, null, 0], subtitleText, 1, 0, true);
+animateInTimeline("slide1-img", "fadeOutShrink", subtitleText, 1, 0, true);
 
 // Slide 2
 subtitleText = "*Cricket Example*";
@@ -25,7 +36,8 @@ animateInTimeline("slide3-cupboard", "fadeIn", subtitleText);
 
 // Slide 4
 subtitleText = "In fact, studies have consistently shown that...";
-animateInTimeline("slide3-cupboard", "moveLeft100", subtitleText, 3);
+//                                   Move item left by 100%
+animateInTimeline("slide3-cupboard", [-100, null, null, null, 1, 1, 1, "ease"], subtitleText, 3);
 animateInTimeline("slide3-eggs", "fadeOut", subtitleText);
 animateInTimeline("slide3-items", "fadeOut", subtitleText);
 animateInTimeline("slide3-pipes", "fadeOut", subtitleText);
@@ -47,7 +59,8 @@ animateInTimeline("slide6-img", "fadeIn", subtitleText);
 
 // Slide 7
 subtitleText = "Using structured layouts..."
-animateInTimeline("slide6-img", "moveLeft70Shrink", subtitleText, 2);
+//                              Move item left by 70% and shrink to scale 0.6
+animateInTimeline("slide6-img", [-70, null, 0.6, null, 1, 1, 1, "ease"], subtitleText, 2);
 animateInTimeline("black-screen", "fadeIn", subtitleText, 0, 0, true);
 animateInTimeline("slide7-lockers", "fadeIn", subtitleText);
 subtitleText = "...and a corresponding inventory list...";
@@ -69,14 +82,18 @@ animateInTimeline("slide8-monitor", "fadeIn", subtitleText);
 animateInTimeline("slide8-phone", "fadeIn", subtitleText);
 subtitleText = "...and then by making the information available to the operator at the point of use, with handheld devices and barcoded information.";
 animateInTimeline("slide8-barcode", "fadeIn", subtitleText, 1);
-animateInTimeline("slide8-scan", "partFadeInGrow", subtitleText);
+//                               Grows item to scale 1 and opacity is 50%
+animateInTimeline("slide8-scan", [null, null, 1, null, 0.5, 0, 0.75, "linear"], subtitleText);
 
 // Slide 9
-subtitleText = "For these companies, each location is allocated a unique barcode, but the layout of the stock remains broadly unchanged; highly structured, with identical items located together, normally in a single location.";
+subtitleText = "For these companies, each location is allocated a unique barcode, but the layout of the stock remains broadly unchanged...";
 animateInTimeline("slide8-monitor", "fadeOut", subtitleText, 4);
 animateInTimeline("slide8-phone", "fadeOut", subtitleText);
 animateInTimeline("slide8-barcode", "fadeOut", subtitleText);
-animateInTimeline("slide8-scan", "fadeOut", subtitleText);
+//                               Fade out to opacity 0 from 0.5
+animateInTimeline("slide8-scan", [null, null, null, null, 0, 0.5, 0.5, "linear"], subtitleText);
 animateInTimeline("slide9-img", "fadeIn", subtitleText);
+
+
 
 document.querySelector("main").style.opacity = 1;

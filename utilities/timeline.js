@@ -3,12 +3,12 @@
 import { animations } from './animations.js';
 
 const theBlack = document.getElementById("fade-in");
-animations.fadeOut(theBlack, true);
+animations.fadeOut(theBlack, true); // Fade out a covering black screen at the start of the case study
 
 const theTitle = document.getElementById("title");
-animations.fadeIn(theTitle, true);
+animations.fadeIn(theTitle, true); // Fade in the title element
 
-const subtitle = document.getElementById("subtitle");
+const subtitle = document.getElementById("subtitle"); // The subtitle element in html
 
 let btnNext = document.getElementById('btn-next');
 let btnBack = document.getElementById('btn-back');
@@ -18,20 +18,19 @@ let timelineLength = 0;
 
 let position = 0;
 
-// Create list to hold timeline details (what element is affected and by which animation at every timeline point)
+// Create a collection of arrays to hold timeline details (each entry explained in animateInTimeline)
 const timeline = {
     element: [],
     animation: [],
     subtitleText: [],
     repetition: [],
     delay: [],
-    defaultvals: []
 };
 
 // Create animation queue to ensure all animations are played in sequence
 var animationQueue = [];
 
-animations.fadeIn(document.querySelector("Main"), true);
+animations.fadeIn(document.querySelector("Main"), true); // fade in the main content
 
 // Create async delay function
 function delay(milliseconds) {
@@ -52,53 +51,56 @@ function delay(milliseconds) {
 // ------------------------------
 
 export function animateInTimeline(element, animation, subtitleText = "", repetition = 0, delay = -1, appearFirst = false) {
+
+    // If appearFirst is set to true, the element is visible on load; otherwise, it is hidden
     document.getElementById(element).style.visibility = appearFirst ? "visible" : "hidden";
     document.getElementById(element).style.opacity = appearFirst ? 1 : 0;
 
+    // Add all arguments to the timeline collection
     timeline.element[position] = element;
     timeline.animation[position] = animation;
     timeline.subtitleText[position] = subtitleText;
     timeline.repetition[position] = repetition;
     timeline.delay[position] = delay;
-    timeline.defaultvals[position] = [element.style.transform, element.style.opacity];
 
+    // Increments the timeline length and position
     timelineLength++;
     position++;
 
-    subtitle.textContent = timeline.subtitleText[0];
+    subtitle.textContent = timeline.subtitleText[0]; // Sets the subtitle element to the first subtitle text in the timeline (default value before next or back buttons are clicked)
 
+    // Hides the subtitle text element if it is empty
     if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
     else subtitle.style.visibility = "visible";
 }
 
 // Progress timeline function, async to be used with a delay
-async function progressTimeline(repetitions, activator) { // Repeats for number of elements specified in timeline, activator holds the first elements number (for delay value) 
+async function progressTimeline(repetitions) {
     let delayVal = 0;
 
+    // Repeats for number of elements specified in timeline
     for (let i = 0; i <= repetitions; i++) {
+        // While there are elements in the animation queue
         while (animationQueue.length > 0) {
-            let pos = animationQueue.shift();
+            let pos = animationQueue.shift(); // Get the next element in the queue
 
-            if (timeline.delay[pos] != -1) {
+            if (timeline.delay[pos] != -1) { // If the delay value is set in the timeline, update delayVal (-1 means not set)
                 delayVal = timeline.delay[pos];
             }
 
-            // animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // Animate
-
-            if (typeof timeline.animation[pos] === "string") {
-                animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // Animate
-            } else {
-                animations.animate(document.getElementById(timeline.element[pos]), true, timeline.animation[pos], ["", 0]);
+            if (typeof timeline.animation[pos] === "string") { // If using a preset animation
+                animations[timeline.animation[pos]](document.getElementById(timeline.element[pos]), true); // animationName(element, forward)
+            } else { // Else, using advanced animation
+                animations.animate(document.getElementById(timeline.element[pos]), true, timeline.animation[pos]); // animate(element, forward, animationValues)
             }
 
-            // animations.animate(document.getElementById(timeline.element[pos]), true, timeline.animation[pos]);
+            subtitle.textContent = timeline.subtitleText[pos]; // Update subtitle text
 
-            subtitle.textContent = timeline.subtitleText[pos];
-
+            // Hides the subtitle text element if it is empty
             if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
             else subtitle.style.visibility = "visible";
 
-            await delay(delayVal); // Delay by set number of milliseconds (delay value set in the first affected element only)
+            await delay(delayVal); // Delay until next animation (milliseconds)
         }
     }
 }
@@ -111,11 +113,9 @@ btnNext.addEventListener("click", () => { // Next button is clicked
     let repetitions = timeline.repetition[timelinePos]; // Check how many animations will be run
     timeline.repetition[timelinePos] = 0; // Reset (for reversal logic)
 
-    let activator = timelinePos;
-
     for (let i = 0; i <= repetitions; i++) {
         if (timelinePos < timelineLength) {
-            animationQueue.push(timelinePos);
+            animationQueue.push(timelinePos); // Adds the current position to the animation queue
 
             timelinePos++;
 
@@ -125,7 +125,7 @@ btnNext.addEventListener("click", () => { // Next button is clicked
         }
     }
 
-    progressTimeline(repetitions, activator);
+    progressTimeline(repetitions); // Progress the timeline by the number of repetitions
 
     let videos = document.getElementsByClassName("video");
 
@@ -152,6 +152,8 @@ btnNext.addEventListener("click", () => { // Next button is clicked
 });
 
 btnBack.addEventListener("click", () => { // Back button is clicked
+
+    // Sets number of reperations to previous stored value (reversal logic)
     let repetitions = timeline.repetition[timelinePos - 1];
     timeline.repetition[timelinePos - 1] = 0;
 
@@ -159,16 +161,15 @@ btnBack.addEventListener("click", () => { // Back button is clicked
         if (timelinePos > 0) {
             timelinePos--;
 
-            // animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false);
-
-            if (typeof timeline.animation[timelinePos] === "string") {
-                animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false); // Animate
-            } else {
-                animations.animate(document.getElementById(timeline.element[timelinePos]), true, timeline.animation[timelinePos], timeline.defaultvals[timelinePos]);
+            if (typeof timeline.animation[timelinePos] === "string") { // If using a preset animation
+                animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false); // animationName(element, forward)
+            } else {  // Else, using advanced animation
+                animations.animate(document.getElementById(timeline.element[timelinePos]), false, timeline.animation[timelinePos]); // animate(element, forward, animationValues)
             }
 
-            subtitle.textContent = timeline.subtitleText[Math.max(0, timelinePos - 1)];
+            subtitle.textContent = timeline.subtitleText[Math.max(0, timelinePos - 1)]; // Update subtitle text
 
+            // Hides the subtitle text element if it is empty
             if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
             else subtitle.style.visibility = "visible";
 
