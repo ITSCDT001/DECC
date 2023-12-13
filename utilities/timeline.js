@@ -113,6 +113,8 @@ btnNext.addEventListener("click", () => { // Next button is clicked
     let repetitions = timeline.repetition[timelinePos]; // Check how many animations will be run
     timeline.repetition[timelinePos] = 0; // Reset (for reversal logic)
 
+    let activator = timelinePos;
+
     for (let i = 0; i <= repetitions; i++) {
         if (timelinePos < timelineLength) {
             animationQueue.push(timelinePos); // Adds the current position to the animation queue

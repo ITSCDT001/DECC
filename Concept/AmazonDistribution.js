@@ -94,6 +94,4 @@ animateInTimeline("slide8-barcode", "fadeOut", subtitleText);
 animateInTimeline("slide8-scan", [null, null, null, null, 0, 0.5, 0.5, "linear"], subtitleText);
 animateInTimeline("slide9-img", "fadeIn", subtitleText);
 
-
-
 document.querySelector("main").style.opacity = 1;
