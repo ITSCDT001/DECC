@@ -106,102 +106,107 @@ async function progressTimeline(repetitions) {
 }
 
 btnNext.addEventListener("click", () => { // Next button is clicked
-    if (timelinePos == timelineLength) { // If last in position, return to home page
-        window.location.assign("/indexPage/index.html");
-    }
-
-    let repetitions = timeline.repetition[timelinePos]; // Check how many animations will be run
-    timeline.repetition[timelinePos] = 0; // Reset (for reversal logic)
-
-    let activator = timelinePos;
-
-    for (let i = 0; i <= repetitions; i++) {
-        if (timelinePos < timelineLength) {
-            animationQueue.push(timelinePos); // Adds the current position to the animation queue
-
-            timelinePos++;
-
-            timeline.repetition[timelinePos - 1] = repetitions; // Set the repetitions to previous stored value (reversal logic)
-        } else {
-            timelinePos = timelineLength;
+    if (animationQueue.length == 0) // Ensures any queued animation is complete before progressing in the timeline
+    {
+        if (timelinePos == timelineLength) { // If last in position, return to home page
+            window.location.assign("/indexPage/index.html");
         }
-    }
 
-    progressTimeline(repetitions); // Progress the timeline by the number of repetitions
+        let repetitions = timeline.repetition[timelinePos]; // Check how many animations will be run
+        timeline.repetition[timelinePos] = 0; // Reset (for reversal logic)
 
-    let videos = document.getElementsByClassName("video");
+        for (let i = 0; i <= repetitions; i++) {
+            if (timelinePos < timelineLength) {
+                animationQueue.push(timelinePos); // Adds the current position to the animation queue
 
-    for (let video of videos) { // Pause and mute all videos on previous page
-        let parent = video.parentElement;
-        if (parent.style.pointerEvents == "none") {
-            video.muted = true;
-            video.pause();
+                timelinePos++;
+
+                timeline.repetition[timelinePos - 1] = repetitions; // Set the repetitions to previous stored value (reversal logic)
+            } else {
+                timelinePos = timelineLength;
+            }
         }
-    }
 
-    // Change Next button to Home button
+        progressTimeline(repetitions); // Progress the timeline by the number of repetitions
 
-    if (timelinePos == timelineLength) {
+        let videos = document.getElementsByClassName("video");
 
-        btnNext.textContent = " Home ";
+        for (let video of videos) { // Pause and mute all videos on previous page
+            let parent = video.parentElement;
+            if (parent.style.pointerEvents == "none") {
+                video.muted = true;
+                video.pause();
+            }
+        }
 
-        var icon = document.createElement('i');
+        // Change Next button to Home button
 
-        icon.setAttribute('class', 'bi-house-fill');
+        if (timelinePos == timelineLength) {
 
-        btnNext.appendChild(icon);
+            btnNext.textContent = " Home ";
+
+            var icon = document.createElement('i');
+
+            icon.setAttribute('class', 'bi-house-fill');
+
+            btnNext.appendChild(icon);
+        }
     }
 });
 
 btnBack.addEventListener("click", () => { // Back button is clicked
 
-    // Sets number of reperations to previous stored value (reversal logic)
-    let repetitions = timeline.repetition[timelinePos - 1];
-    timeline.repetition[timelinePos - 1] = 0;
+    if (animationQueue.length == 0) // Ensures any queued animation is complete before moving back in the timeline
+    {
 
-    for (let i = 0; i <= repetitions; i++) {
-        if (timelinePos > 0) {
-            timelinePos--;
+        // Sets number of reperations to previous stored value (reversal logic)
+        let repetitions = timeline.repetition[timelinePos - 1];
+        timeline.repetition[timelinePos - 1] = 0;
 
-            if (typeof timeline.animation[timelinePos] === "string") { // If using a preset animation
-                animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false); // animationName(element, forward)
-            } else {  // Else, using advanced animation
-                animations.animate(document.getElementById(timeline.element[timelinePos]), false, timeline.animation[timelinePos]); // animate(element, forward, animationValues)
+        for (let i = 0; i <= repetitions; i++) {
+            if (timelinePos > 0) {
+                timelinePos--;
+
+                if (typeof timeline.animation[timelinePos] === "string") { // If using a preset animation
+                    animations[timeline.animation[timelinePos]](document.getElementById(timeline.element[timelinePos]), false); // animationName(element, forward)
+                } else {  // Else, using advanced animation
+                    animations.animate(document.getElementById(timeline.element[timelinePos]), false, timeline.animation[timelinePos]); // animate(element, forward, animationValues)
+                }
+
+                subtitle.textContent = timeline.subtitleText[Math.max(0, timelinePos - 1)]; // Update subtitle text
+
+                // Hides the subtitle text element if it is empty
+                if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
+                else subtitle.style.visibility = "visible";
+
+                timeline.repetition[timelinePos] = repetitions;
+            } else {
+                timelinePos = 0;
             }
-
-            subtitle.textContent = timeline.subtitleText[Math.max(0, timelinePos - 1)]; // Update subtitle text
-
-            // Hides the subtitle text element if it is empty
-            if (subtitle.textContent == "") subtitle.style.visibility = "hidden";
-            else subtitle.style.visibility = "visible";
-
-            timeline.repetition[timelinePos] = repetitions;
-        } else {
-            timelinePos = 0;
         }
-    }
 
-    let videos = document.getElementsByClassName("video");
+        let videos = document.getElementsByClassName("video");
 
-    for (let video of videos) { // Reset and play previous videos
-        let parent = video.parentElement;
-        if (parent.style.pointerEvents == "auto") {
-            video.muted = false;
-            video.currentTime = 0;
-            video.play();
+        for (let video of videos) { // Reset and play previous videos
+            let parent = video.parentElement;
+            if (parent.style.pointerEvents == "auto") {
+                video.muted = false;
+                video.currentTime = 0;
+                video.play();
+            }
         }
-    }
 
-    // Revert Home button back to Next button
+        // Revert Home button back to Next button
 
-    if (timelinePos < timelineLength) {
+        if (timelinePos < timelineLength) {
 
-        btnNext.textContent = " Next ";
+            btnNext.textContent = " Next ";
 
-        var icon = document.createElement('i');
+            var icon = document.createElement('i');
 
-        icon.setAttribute('class', 'bi-arrow-right');
+            icon.setAttribute('class', 'bi-arrow-right');
 
-        btnNext.appendChild(icon);
+            btnNext.appendChild(icon);
+        }
     }
 });
