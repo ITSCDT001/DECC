@@ -56,6 +56,8 @@ footer {
     height: 100%;
     background-color: rgba(0,0,0,0.20);
     backdrop-filter: blur(20px);
+
+    z-index: 10;
 }
 
 .display-1 {
@@ -64,6 +66,8 @@ footer {
     color: white;
     text-align: center;
     top: 20%;
+
+    z-index: 10;
 }
 
 /* END HEADER */
@@ -366,7 +370,7 @@ footer {
 
 /* SLIDE 9 */
 
-.slide9{
+.slide9-warehouse{
     flex: none;
     width: 100%;
     margin-left: -100%;
@@ -408,6 +412,8 @@ footer {
     
     width: 50%;
     height: auto;
+
+    transform: translateY(-1000%);
 }
 
 .slide9-items-row{
@@ -417,81 +423,44 @@ footer {
     margin-right: 1.5%;
 }
 
+/* SLIDE 10 */
+
+.slide10-1{
+    flex: none;
+    width: 100%;
+    margin-left: -100%;
+    justify-content: center;
+    transform: translateY(3.4%);
+
+    z-index: 1;
+}
+
+#slide10-warehouse-disorganised{
+    position: relative;
+    background: transparent;
+    border: none;
+
+    width: 73.7%;
+    height: auto;
+}
+
+.slide10-2{
+    flex: none;
+    width: 100%;
+    margin-left: -100%;
+    justify-content: center;
+    transform: translateY(3.4%);
+}
+
+#slide10-warehouse-organised{
+    position: relative;
+    background: transparent;
+    border: none;
+
+    width: 73.7%;
+    height: auto;
+
+    transform: translateX(-55) translateY(0.4);
+}
+
 /* INDIVIDUAL ITEMS */
-
-#slide9-bear2{
-    transform: translateY(30%);
-}
-
-#slide9-bear3{
-    transform: translateY(60%);
-}
-
-#slide9-bucket2
-{
-    transform: translateY(20%);
-}
-
-#slide9-bucket3{
-    transform: translateY(40%);
-}
-
-#slide9-horse2
-{
-    transform: translateY(40%);
-}
-
-#slide9-horse3{
-    transform: translateY(80%);
-}
-
-#slide9-ball1
-{
-    transform: translateY(-30%);
-}
-
-#slide9-ball3{
-    transform: translateY(30%);
-}
-
-#slide9-train1
-{
-    transform: translateY(-50%);
-}
-
-#slide9-train3{
-    transform: translateY(50%);
-}
-
-#slide9-duck1
-{
-    transform: translateY(-40%);
-}
-
-#slide9-duck2{
-    transform: translateY(-10%);
-}
-
-#slide9-duck3{
-    transform: translateY(30%);
-}
-
-#slide9-rattle2{
-    transform: translateY(-40%);
-}
-
-#slide9-rattle3{
-    transform: translateY(20%);
-}
-
-#slide9-bike1{
-    transform: translateY(-50%);
-}
-
-#slide9-bike2{
-    transform: translateY(-10%);
-}
-
-#slide9-bike3{
-    transform: translateY(30%);
-}

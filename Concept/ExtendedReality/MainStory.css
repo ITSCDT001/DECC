@@ -138,6 +138,7 @@ footer {
     width:100%;
     margin-left: -100%;
     justify-content: center;
+    transform: translateX(10%);
 }
 
 /*SLIDE 3 */
@@ -221,6 +222,7 @@ footer {
 .designTimelinePar{
     width:auto;
     height: 27vh;
+    transform: translate(-80%, 130%);
 }
 
 .designTimelineCycles{
@@ -295,6 +297,9 @@ footer {
     height: auto;
 }
 
+.slide9-img{
+    transform: translate(100%, 10%);
+}
 .col-4{
     display: flex;
     flex-direction: column;
@@ -309,6 +314,7 @@ footer {
 .timeToMarket{
     width: 95%;
     height: auto;
+    transform: translate(-20%, 0);
 }
 
 /* END SLIDE 9 */
