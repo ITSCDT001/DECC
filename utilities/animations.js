@@ -64,3 +64,15 @@ animations.fadeOutShrink = (element, forward) => {
     element.style.pointerEvents = forward ? "none" : "auto";
 }
 
+animations.slideOut = (element, forward) => {
+    animations.animate(element, forward, [-10, null, null, null, 0, 1, 0.6, "ease"]);
+    element.style.pointerEvents = forward ? "none" : "auto";
+}
+
+// YOU MUST "transform: translateX(10%)" FOR THIS TO WORK
+animations.slideIn = (element, forward) => {
+    animations.animate(element, forward, [0, null, null, null, 1, 0, 0.6, "ease"]);
+    element.style.pointerEvents = forward ? "none" : "auto";
+}
+
+

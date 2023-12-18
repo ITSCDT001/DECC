@@ -143,13 +143,16 @@ btnNext.addEventListener("click", () => { // Next button is clicked
 
         if (timelinePos == timelineLength) {
 
-            btnNext.textContent = " Home ";
+            var button = document.getElementById('btn-next');
 
-            var icon = document.createElement('i');
+            // Get the <i> element inside the button
+            var icon = button.querySelector('i');
 
-            icon.setAttribute('class', 'bi-house-fill');
+            // Remove the existing class "bi-caret-right"
+            icon.classList.remove('bi-caret-right');
 
-            btnNext.appendChild(icon);
+            // Add the new class "bi-house-fill"
+            icon.classList.add('bi-house');
         }
     }
 });
@@ -200,13 +203,16 @@ btnBack.addEventListener("click", () => { // Back button is clicked
 
         if (timelinePos < timelineLength) {
 
-            btnNext.textContent = " Next ";
+            var button = document.getElementById('btn-next');
 
-            var icon = document.createElement('i');
+            // Get the <i> element inside the button
+            var icon = button.querySelector('i');
 
-            icon.setAttribute('class', 'bi-arrow-right');
+            // Remove the existing class "bi-caret-right"
+            icon.classList.remove('bi-house');
 
-            btnNext.appendChild(icon);
+            // Add the new class "bi-house-fill"
+            icon.classList.add('bi-caret-right');
         }
     }
 });
