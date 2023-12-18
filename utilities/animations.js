@@ -63,3 +63,16 @@ animations.fadeOutShrink = (element, forward) => {
     animations.animate(element, forward, [null, null, 0, null, 0, 1, 0.5, "linear"]); // Sets opacity to 0 and scale to 0 in 0.5 milliseconds
     element.style.pointerEvents = forward ? "none" : "auto";
 }
+
+animations.slideOut = (element, forward) => {
+    animations.animate(element, forward, [-10, null, null, null, 0, 1, 0.6, "ease"]);
+    element.style.pointerEvents = forward ? "none" : "auto";
+}
+
+// YOU MUST "transform: translateX(10%)" FOR THIS TO WORK
+animations.slideIn = (element, forward) => {
+    animations.animate(element, forward, [0, null, null, null, 1, 0, 0.6, "ease"]);
+    element.style.pointerEvents = forward ? "none" : "auto";
+}
+
+

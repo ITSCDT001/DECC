@@ -21,190 +21,55 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/indexPage/index.html">
-        <i class="bi-house-fill" style="color:#ffffff"></i>
-      </a>
-      <a class="navbar-brand" href="/indexPage/index.html">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item active text-light" aria-current="page">
-              Home
-            </li>
-          </ol>
-        </nav>
-      </a>
-    </div>
-  </nav>
-  <!-- END NAVBAR -->
-  <!-- PAGE TITLE -->
-  <div class="bg-primary border-title" data-bs-theme="dark" style="--bs-bg-opacity: .1;">
-    <h1 class="display-1">
-      <!--  border-bottom border-light underline-length-->
-      Title
-    </h1>
+  <!--VIDEO BG-->
+  <video autoplay loop muted>
+    <source src="/media/CaseStudyBg.mp4" type="video/mp4">
+  </video>
+  <!--BLACK FADE OUT-->
+  <div class="fade-in" id="fade-in">
   </div>
-  <!-- END PAGE TITLE -->
 
-  <!-- CONTENT -->
-  <div class="container-CaseStudy">
-
-    <!-- Subtitle Card -->
-    <div class="Subtitle" data-bs-theme="dark" style="--bs-bg-opacity: 0.1">
-      <h1 class="display-2" id="subtitle"></h1>
+  <div class="grid-container">
+    <header>
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/indexPage/index.html">
+            <i class="fa-solid fa-house" style="color: #ffffff"></i>
+          </a>
+          <a class="navbar-brand" href="/indexPage/index.html">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active text-light" aria-current="page">
+                  Home
+                </li>
+              </ol>
+            </nav>
+          </a>
+        </div>
+      </nav>
+      <!-- END NAVBAR -->
+      <!-- PAGE TITLE -->
+      <div class="border-title" data-bs-theme="dark" style="--bs-bg-opacity: 0.1">
+        <h1 class="display-1" id="title">TEMP</h1>
+      </div>
+      <!-- END PAGE TITLE -->
+    </header>
+    <!--LEFT RIGHT BUTTON-->
+    <div class="left">
+      <a type="button" class="left-right-btn" id="btn-back"><i class="bi bi-caret-left"></i></a>
     </div>
 
-    <!-- Slide 1 -->
-
-    <div id="slide1-container">
-      <div id="slide1-img"></div>
-      <div id="slide1-title"></div>
-      <div id="slide1-text"></div>
+    <div class="right">
+      <a type="button" class="left-right-btn" id="btn-next"><i class="bi bi-caret-right"></i></a>
     </div>
+    <!--END LEFT RIGHT BUTTON-->
 
-    <!-- Slide 2 -->
+    <main>
 
-    <img src="/media/Pie.png" class="img-thumbnail pie" id="slide2-pie"
-      alt="A pie chart that is 30% and 70% weighted" />
-
-    <div class="text-start text-wrap txt" id="slide2-smalltext" style="color: #ffffff;">
-      <strong>30%</strong>
-    </div>
-
-    <div class="text-center text-wrap txt2" id="slide2-text" style="color: #ffffff;">
-      Cross-industry estimate of total project <b><ins>time lost</ins></b> to addressing issues related to
-      <b><ins>poor requirements management</ins></b>
-    </div>
-
-    <!-- Slide 3 -->
-
-    <div class="text-start text-wrap txt3" id="slide3-text" style="color: #ffffff;">
-      Up to <b>30%</b> project time lost to poor requirements management
-    </div>
-
-    <div class="accordion" id="slide3-accordion" data-bs-theme="dark" style="pointer-events: none;">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-            aria-expanded="true" aria-controls="collapseOne">
-            <strong>Rework</strong>
-          </button>
-        </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#slide3-accordion">
-          <div class="accordion-body">
-            <b>&#x2022;</b> Inadequate or unclear requirements often lead to frequent changes and rework
-            <br>
-            <b>&#x2022;</b> Each iteration of rework adds time to the development process
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <strong>Miscommunication</strong>
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#slide3-accordion">
-          <div class="accordion-body">
-            <b>&#x2022;</b> Poorly managed requirements can result in misunderstandings between stakeholders
-            and development teams
-            <br>
-            <b>&#x2022;</b> This can lead to the need for revisions and adjustments, which extend the
-            timeline
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            <strong>Scope Creep</strong>
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#slide3-accordion">
-          <div class="accordion-body">
-            <b>&#x2022;</b> Unclear requirements may contribute to scope creep, where additional features or
-            changes are introduced during development
-            <br>
-            <b>&#x2022;</b> This can substantially increase the workload and time required
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            <strong>Incraese Testing Time</strong>
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#slide3-accordion">
-          <div class="accordion-body">
-            <b>&#x2022;</b> Incomplete or ambiguous requirements can lead to inadequately tested features
-            <br>
-            <b>&#x2022;</b> Testing becomes more time-consuming as issues surface late in the development
-            process
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-            <strong>Delayed Decision-Making</strong>
-          </button>
-        </h2>
-        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#slide3-accordion">
-          <div class="accordion-body">
-            <b>&#x2022;</b> If key decisions related to requirements are delayed, it can stall progress on
-            the project, affecting subsequent development phases
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-            data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-            <strong>Customer Dissatisfaction</strong>
-          </button>
-        </h2>
-        <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#slide3-accordion">
-          <div class="accordion-body">
-            <b>&#x2022;</b> Poorly managed requirements may result in a product that doesn't meet customer
-            expectations
-            <br>
-            <b>&#x2022;</b> Addressing customer dissatisfaction often involves further modifications and
-            extensions to the development timeline
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+    </main>
+    <footer></footer>
   </div>
-  <!-- END CONTENT -->
-
-  <!-- LOWER NAVBAR -->
-
-  <nav class="navbar fixed-bottom navbar-expand-lg" id="navbar-bottom" data-bs-theme="dark">
-    <div class="container-sm">
-      <button type="button" class="navbar-brand btn btn-outline-info text-light" id="btn-back">
-        <i class="bi-arrow-left"></i>
-        Back
-      </button>
-    </div>
-
-    <div class="container-sm justify-content-end">
-      <button type="button" class="navbar-brand btn btn-outline-info text-light" id="btn-next">
-        Next
-        <i class="bi-arrow-right"></i>
-      </button>
-    </div>
-  </nav>
-
-  <!-- END LOWER NAVBAR -->
 </body>
 
 <script src="./template.js" type="module"></script>

@@ -11,8 +11,8 @@ import { animateInTimeline } from "/utilities/timeline.js";
 
 /////////////////////////////////////////////////////////////////////////////////////////
 
-animateInTimeline("slide1", [-10, null, null, null, 0, 1, 0.6, "ease"], "", 1, 0, true);
-animateInTimeline("slide2", [0, null, null, null, 1, 0, 0.6, "ease"], "");
+animateInTimeline("slide1", "slideOut", "", 1, 0, true);
+animateInTimeline("slide2", "slideIn", "");
 
 animateInTimeline("slide2", "fadeOut", "", 1);
 animateInTimeline("slide3", "fadeIn", "");
