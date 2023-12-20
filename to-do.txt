@@ -1,8 +1,6 @@
 To do list
 
--Edit case study structure (more user freindly for touch screen) css grid, next and back in the left and right area
-    - Maybe put subtitles in its own css grid area if the bottom next and back navbar goes away? (See Wireframe)
-    - Progress bar in footer
+- Progress bar in footer
 
 - Case Study Home Page (title, thumbnail, settings)
 
@@ -11,8 +9,6 @@ To do list
         -Add Cricket animate 
     - Extended Reality
         - Feedback Loops
-
-- More 'techy' background
 
 - Context for case Studies
     - Wiki-style hover
