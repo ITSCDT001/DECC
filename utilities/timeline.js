@@ -24,8 +24,15 @@ const timeline = {
     animation: [],
     subtitleText: [],
     repetition: [],
-    delay: [],
+    delay: []
 };
+
+// array[0] = value;
+// array[1] = value;
+// array[2] = value;
+// array[3] = value;
+
+// array = [value, value, value, value];
 
 // Create animation queue to ensure all animations are played in sequence
 var animationQueue = [];
@@ -51,6 +58,7 @@ function delay(milliseconds) {
 // ------------------------------
 
 export function animateInTimeline(element, animation, subtitleText = "", repetition = 0, delay = -1, appearFirst = false) {
+
 
     // If appearFirst is set to true, the element is visible on load; otherwise, it is hidden
     document.getElementById(element).style.visibility = appearFirst ? "visible" : "hidden";
