@@ -17,6 +17,8 @@ let subtitleText;
 subtitleText = "The human brain primarily operates using predictive models, which it builds based on previous experiences.";
 animateInTimeline("slide1-img", "fadeOutShrink", subtitleText, 1, 0, true);
 
+animateInTimeline({ id: "slide1-img", rep: 3, delay: 1000 });
+
 // Slide 2
 subtitleText = "*Cricket Example*";
 animateInTimeline("slide2-img", "fadeIn", subtitleText);
@@ -25,7 +27,7 @@ animateInTimeline("slide2-img", "fadeIn", subtitleText);
 subtitleText = "Accordingly, the brain is hard-wired to recognise patterns, favour symmetry, and prefer items to be laid out in a structured and organised way.";
 
 animateInTimeline("slide2-img", "fadeIn", subtitleText, 4);
-animateInTimeline("black-screen", "fadeOut", subtitleText, 0, 0, true);
+animateInTimeline("black-screen", "fadeOut", subtitleText);
 animateInTimeline("slide3-eggs", "fadeIn", subtitleText, 0, 1000);
 animateInTimeline("slide3-items", "fadeIn", subtitleText);
 animateInTimeline("slide3-pipes", "fadeIn", subtitleText);
@@ -57,7 +59,7 @@ animateInTimeline("slide6-img", "fadeIn", subtitleText);
 // Slide 7
 subtitleText = "Using structured layouts and a corresponding inventory list, the operator is able to locate specific items among millions of others."
 //                              Move item left by 70% and shrink to scale 0.6
-animateInTimeline("slide6-img", [-70, null, 0.6, null, 1, 1, 1, "ease"], subtitleText, 6);
+animateInTimeline("slide6-img", [-60, null, 0.5, null, 1, 1, 1, "ease"], subtitleText, 6);
 animateInTimeline("black-screen", "fadeIn", subtitleText, 0, 0, true);
 animateInTimeline("slide7-lockers", "fadeIn", subtitleText, 0, 1500);
 
@@ -169,7 +171,7 @@ animateInTimeline("slide9-items", "fadeOut", subtitleText, 5, 0, true);
 animateInTimeline("slide9-img", "fadeOut", subtitleText);
 animateInTimeline("slide10-warehouse-organised", "snapIn", subtitleText);
 animateInTimeline("slide10-warehouse-disorganised", "snapIn", subtitleText, 0, 500);
-animateInTimeline("slide10-warehouse-disorganised", [55, -3, null, null, 1, 1, 1, "ease"], subtitleText, 0, 0);
-animateInTimeline("slide10-warehouse-organised", [-55, -3, null, null, 1, 1, 1, "ease"], subtitleText);
+animateInTimeline("slide10-warehouse-disorganised", [50, -3, 0.9, null, 1, 1, 1, "ease"], subtitleText, 0, 0);
+animateInTimeline("slide10-warehouse-organised", [-50, -3, 0.9, null, 1, 1, 1, "ease"], subtitleText);
 
 document.querySelector("main").style.opacity = 1;
